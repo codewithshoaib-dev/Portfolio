@@ -1,0 +1,79 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg-primary: #fdfcfb;
+  --text-primary: #1a1a1a;
+  --text-secondary: #666;
+  --accent: #000;
+  --border-light: rgba(0, 0, 0, 0.08);
+  --ease-standard: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  scroll-behavior: smooth;
+}
+
+/* Reusable Utility Classes */
+.container-max {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-padding {
+  padding: 8rem 0;
+  border-top: 1px solid var(--border-light);
+}
+
+.reveal-text {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s var(--ease-standard);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-link-premium {
+  position: relative;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: opacity 0.3s ease;
+}
+
+.nav-link-premium::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.4s var(--ease-standard);
+}
+
+.nav-link-premium:hover::after {
+  width: 100%;
+}
+
+.project-row {
+  display: grid;
+  grid-template-cols: 0.5fr 2fr 1.5fr 0.5fr;
+  align-items: center;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--border-light);
+  transition: padding 0.4s var(--ease-standard);
+}
+
+.project-row:hover {
+  padding-left: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.01);
+}
