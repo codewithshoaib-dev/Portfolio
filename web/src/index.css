@@ -2,123 +2,56 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Sohne:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
 
-@custom-variant dark (&:is(.dark *));
 
 :root {
+  /* Core */
   --background: #faf9f7;
   --foreground: #0f0f0f;
+
+  /* Surfaces */
   --card: #ffffff;
-  --card-foreground: #0f0f0f;
-  --popover: #ffffff;
-  --popover-foreground: #0f0f0f;
+  --border: #e8e6e1;
+
+  /* Primary UI */
   --primary: #0f0f0f;
   --primary-foreground: #faf9f7;
+
+  /* Secondary / subtle */
   --secondary: #f0ede8;
-  --secondary-foreground: #0f0f0f;
   --muted: #a8a29e;
   --muted-foreground: #5c5c5c;
+
+  /* Accent  */
   --accent: #00d9ff;
-  --accent-foreground: #0f0f0f;
-  --accent-alt: #ff006e;
-  --destructive: #ff6b6b;
-  --destructive-foreground: #ffffff;
-  --border: #e8e6e1;
-  --input: #f0ede8;
-  --ring: #00d9ff;
-  --chart-1: #00d9ff;
-  --chart-2: #ff006e;
-  --chart-3: #0f0f0f;
-  --chart-4: #a8a29e;
-  --chart-5: #f0ede8;
+
+  /* Radius */
   --radius: 0.5rem;
-  --sidebar: #ffffff;
-  --sidebar-foreground: #0f0f0f;
-  --sidebar-primary: #0f0f0f;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #00d9ff;
-  --sidebar-accent-foreground: #0f0f0f;
-  --sidebar-border: #e8e6e1;
-  --sidebar-ring: #00d9ff;
 }
 
-.dark {
-  --background: #0f0f0f;
-  --foreground: #faf9f7;
-  --card: #1a1a1a;
-  --card-foreground: #faf9f7;
-  --popover: #1a1a1a;
-  --popover-foreground: #faf9f7;
-  --primary: #faf9f7;
-  --primary-foreground: #0f0f0f;
-  --secondary: #2a2a2a;
-  --secondary-foreground: #faf9f7;
-  --muted: #666660;
-  --muted-foreground: #a8a29e;
-  --accent: #00d9ff;
-  --accent-foreground: #0f0f0f;
-  --accent-alt: #ff006e;
-  --destructive: #ff6b6b;
-  --destructive-foreground: #0f0f0f;
-  --border: #2a2a2a;
-  --input: #2a2a2a;
-  --ring: #00d9ff;
-  --chart-1: #00d9ff;
-  --chart-2: #ff006e;
-  --chart-3: #faf9f7;
-  --chart-4: #666660;
-  --chart-5: #2a2a2a;
-  --sidebar: #1a1a1a;
-  --sidebar-foreground: #faf9f7;
-  --sidebar-primary: #faf9f7;
-  --sidebar-primary-foreground: #0f0f0f;
-  --sidebar-accent: #00d9ff;
-  --sidebar-accent-foreground: #0f0f0f;
-  --sidebar-border: #2a2a2a;
-  --sidebar-ring: #00d9ff;
-}
 
 @theme inline {
   --font-sans: 'Sohne', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
+  --color-border: var(--border);
+
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+
   --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
+
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent-alt: var(--accent-alt);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
-}
 
+  --color-accent: var(--accent);
+
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 4px);
+}
 
 
 @layer components {
@@ -130,141 +63,24 @@
     @apply max-w-7xl mx-auto;
   }
 
-  .gradient-text {
-    @apply bg-gradient-to-r from-accent via-accent-alt to-accent bg-clip-text text-transparent;
+    /* ─── Buttons ───────────────── */
+  .btn-primary {
+    @apply px-8 py-4 bg-black text-white rounded-md font-medium
+           transition-transform duration-200 ease-in-out
+           hover:-translate-y-0.5;
   }
 
-  .tech-grid {
-    @apply bg-repeat;
-    background-image: 
-      linear-gradient(90deg, var(--border) 1px, transparent 1px),
-      linear-gradient(0deg, var(--border) 1px, transparent 1px);
-    background-size: 50px 50px;
+  .btn-secondary {
+    @apply px-8 py-4 border border-neutral-400 rounded-md font-medium bg-white;
   }
 
-  .glow {
-    @apply shadow-lg shadow-accent/20;
+  /* ─── Preview UI ───────────────── */
+  .preview-line {
+    @apply h-2.5 bg-neutral-200 rounded mb-3;
   }
-}
 
-
-/* ─── Background ───────────────── */
-.hero-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(to right, rgba(0,0,0,0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0,0,0,0.04) 1px, transparent 1px);
-  background-size: 48px 48px;
-  pointer-events: none;
-}
-
-.hero-fade {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, transparent, transparent, white);
-  pointer-events: none;
-}
-
-/* ─── Typography ───────────────── */
-.hero-eyebrow {
-  font-size: 0.85rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #737373;
-  margin-bottom: 1.5rem;
-}
-
-.hero-heading {
-  font-size: 2.75rem; 
-  line-height: 1.15;  
-  font-weight: 600;
-  letter-spacing: -0.015em;
-  max-width: 28ch; 
-}
-
-@media (min-width: 640px) {
-  .hero-heading {
-    font-size: 3.25rem;
+  .preview-card {
+    @apply mt-4 p-4 border border-neutral-200 rounded-lg;
   }
-}
-
-@media (min-width: 1024px) {
-  .hero-heading {
-    font-size: 3.75rem;
-  }
-}
-
-.hero-heading-accent {
-  color: #171717; /* slightly stronger than default */
-}
-
-.hero-subheading {
-  margin-top: 2rem;
-  font-size: 1.125rem;
-  color: #525252;
-  max-width: 36rem;
-}
-
-/* ─── Buttons ───────────────── */
-.btn-primary {
-  padding: 1rem 2rem;
-  background: black;
-  color: white;
-  border-radius: 6px;
-  font-weight: 500;
-  transition: transform 0.2s ease;
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-}
-
-.btn-secondary {
-  padding: 1rem 2rem;
-  border: 1px solid #a3a3a3;
-  border-radius: 6px;
-  font-weight: 500;
-  background: white;
-}
-
-/* ─── Preview Card ───────────────── */
-.hero-preview {
-  border: 1px solid #e5e5e5;
-  border-radius: 12px;
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
-.hero-preview-header {
-  padding: 0.75rem;
-  border-bottom: 1px solid #eee;
-}
-
-.hero-dots span {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  background: #d4d4d4;
-  border-radius: 50%;
-  margin-right: 4px;
-}
-
-.hero-preview-body {
-  padding: 1.25rem;
-}
-
-.preview-line {
-  height: 10px;
-  background: #e5e5e5;
-  border-radius: 4px;
-  margin-bottom: 0.75rem;
-}
-
-.preview-card {
-  margin-top: 1rem;
-  padding: 1rem;
-  border: 1px solid #eee;
-  border-radius: 8px;
+  
 }

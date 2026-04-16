@@ -5,10 +5,17 @@ export default function Hero() {
       className="relative overflow-hidden border-b border-neutral-200 pt-16 md:pt-20 pb-20 md:pb-24"
     >
       {/* ─── Grid Background ───────────────── */}
-      <div className="hero-grid" />
+      <div
+        className="
+          absolute inset-0 pointer-events-none
+          bg-[linear-gradient(to_right,rgba(0,0,0,0.04)_1px,transparent_1px),
+              linear-gradient(to_bottom,rgba(0,0,0,0.04)_1px,transparent_1px)]
+          bg-[size:48px_48px]
+        "
+      />
 
       {/* Bottom fade */}
-      <div className="hero-fade" />
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-transparent to-white" />
 
       {/* ─── Content ───────────────── */}
       <div className="container-max relative z-10">
@@ -16,17 +23,19 @@ export default function Hero() {
           {/* ─── Left Content ───────────────── */}
           <div className="max-w-2xl">
             {/* Eyebrow */}
-            <p className="hero-eyebrow">React • Django • API Integrations</p>
+            <p className="text-sm tracking-[0.12em] uppercase text-neutral-500 mb-6">
+              React • Django • API Integrations
+            </p>
 
             {/* Headline */}
-            <h1 className="hero-heading">
+            <h1 className="font-semibold tracking-[-0.015em] leading-[1.15] max-w-[28ch] text-[2.75rem] sm:text-[3.25rem] lg:text-[3.75rem]">
               Hi, I'm Shoaib,{" "}
-              <span className="hero-heading-accent">
+              <span className="text-neutral-900">
                 I build high-quality websites for small businesses
               </span>
             </h1>
 
-            <p className="hero-subheading">
+            <p className="mt-8 text-lg text-neutral-600 max-w-xl">
               From landing pages to full web apps, I create fast, reliable
               solutions that help you attract customers and run your business
               more efficiently.
@@ -60,18 +69,18 @@ export default function Hero() {
 
           {/* ─── Right Side (Preview Card) ───────────────── */}
           <div className="relative hidden lg:block">
-            <div className="hero-preview">
+            <div className="border border-neutral-200 rounded-xl overflow-hidden bg-white shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
               {/* Top bar */}
-              <div className="hero-preview-header">
-                <div className="hero-dots">
-                  <span />
-                  <span />
-                  <span />
+              <div className="p-3 border-b border-neutral-200">
+                <div className="flex gap-1">
+                  <span className="w-2 h-2 bg-neutral-300 rounded-full" />
+                  <span className="w-2 h-2 bg-neutral-300 rounded-full" />
+                  <span className="w-2 h-2 bg-neutral-300 rounded-full" />
                 </div>
               </div>
 
               {/* Fake UI content */}
-              <div className="hero-preview-body">
+              <div className="p-5">
                 <div className="preview-line w-2/3" />
                 <div className="preview-line w-1/2" />
 
