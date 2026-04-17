@@ -82,5 +82,57 @@
   .preview-card {
     @apply mt-4 p-4 border border-neutral-200 rounded-lg;
   }
+
+  /* __Projects.jsx____ */
+
+   .section-subheading {
+    @apply mt-4 text-neutral-600 text-4xl font-semibold tracking-tight max-w-2xl;
+  }
+
+    /* Card */
+  .project-card {
+    @apply border border-neutral-200 rounded-xl bg-background overflow-hidden
+           transition-transform duration-200 ease-out
+           hover:-translate-y-1 hover:border-neutral-300;
+  }
+
+  /* Image container */
+  .project-media {
+    @apply relative h-56 overflow-hidden border-b border-neutral-200;
+  }
+
+  .project-image {
+    @apply w-full h-full object-cover
+           transition-transform duration-300 ease-out;
+  }
+
+  .project-card:hover .project-image {
+    @apply scale-[1.04];
+  }
+
+  /* Content */
+  .project-content {
+    @apply p-5;
+  }
+
+  .project-title {
+    @apply text-base font-semibold text-neutral-900;
+  }
+
+  .project-description {
+    @apply mt-2 text-sm text-neutral-600 leading-relaxed;
+  }
+
+  /* Link */
+  .project-link {
+    @apply mt-3 inline-block text-sm font-medium text-neutral-900
+           transition-transform duration-200 ease-out;
+  }
+
+  .project-link:hover {
+    @apply translate-x-1;
+  }
+
+
   
 }

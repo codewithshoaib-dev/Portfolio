@@ -57,11 +57,11 @@ export default function About() {
       <div className="container-max">
         {/* Header */}
         <div className="mb-20 max-w-3xl">
-          <p className="text-sm uppercase tracking-wider text-neutral-500 mb-4">
+          <p className="text-sm uppercase tracking-wider text-neutral-500">
             About
           </p>
 
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-6">
+          <h2 className="section-subheading mb-6">
             Simple builds, clean structure
           </h2>
 
