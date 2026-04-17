@@ -1,9 +1,9 @@
 
 
 
-// import deployly_hero from "./../../assets/images-optimized/deployly_hero.webp";
-// import subscripto_pricing from "./../../assets/images-optimized/subscripto_pricing.webp";
-// import admin_dash from "./../../assets/images-optimized/admin_dash.webp"
+import deployly_hero from "../assets/optimized_images/deployly_hero.webp";
+import subscripto_pricing from "../assets/optimized_images/subscripto_pricing.webp";
+import admin_dash from "../assets/optimized_images/admin_dash.webp";
 
 const projects = [
   {
@@ -12,13 +12,15 @@ const projects = [
     description:
       "A secure workspace for teams to manage csv files, contacts, users, and other operations in one place.",
     link: "/projects/console",
+    image: admin_dash,
   },
   {
     id: 2,
-    title: "Deployly LP",
+    title: "Deployly",
     description:
       "A high-converting landing page designed to clearly present the product and turn visitors into customers.",
     link: "/projects/deployly",
+    image: deployly_hero,
   },
   {
     id: 3,
@@ -26,6 +28,7 @@ const projects = [
     description:
       "A complete subscription system with signup, pricing, and payments—built to handle customers smoothly.",
     link: "/projects/subscripto",
+    image: subscripto_pricing,
   },
 ];
 
@@ -55,7 +58,7 @@ const Projects = () => {
             >
               {/* Image */}
               <div className="project-media">
-                <img alt={proj.title} className="project-image" />
+                <img src={proj.image} alt={proj.title} className="project-image" />
               </div>
 
               {/* Content */}
