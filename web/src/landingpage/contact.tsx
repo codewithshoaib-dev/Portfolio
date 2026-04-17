@@ -5,38 +5,57 @@ export default function Contact() {
     {
       icon: FaLinkedin,
       label: "LinkedIn",
-      value: "Connect professionally",
+      value: "See my professional background",
       href: "https://linkedin.com",
     },
     {
       icon: FaGithub,
       label: "GitHub",
-      value: "View my projects",
+      value: "Browse code and projects",
       href: "https://github.com",
     },
   ];
 
   return (
-    <section id="contact" className="border-b border-neutral-200 pl-8 py-28">
+    <section id="contact" className="border-b border-neutral-200 px-6 pt-24">
       <div className="container-max">
         {/* ─── Header ───────────────── */}
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-2xl mb-14">
           <p className="text-sm uppercase tracking-wider text-neutral-500 mb-4">
             Contact
           </p>
 
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-6">
-            Let’s work together
+          <h2 className="section-subheading mb-5">
+            Let’s build something that works
           </h2>
 
-          <p className="text-lg text-neutral-600 leading-relaxed">
-            Open to freelance projects, collaborations, and building product
-            ideas with teams who care about quality and performance.
+          <p className="text-base md:text-lg text-neutral-600 leading-relaxed">
+            Need a website or web app for your business? Send a quick message
+            with what you’re looking for, and I’ll get back with a clear next step.
           </p>
         </div>
 
-        {/* ─── Contact Methods ───────────────── */}
-        <div className="space-y-2 mb-16">
+        {/* ─── Primary CTA  ───────────────── */}
+        <div className="border border-neutral-200 rounded-lg p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-14">
+          <div>
+            <p className="text-sm uppercase tracking-wider text-neutral-500 mb-2">
+              Email
+            </p>
+
+            <p className="text-neutral-900 font-medium">hello@yourdomain.com</p>
+
+            <p className="text-sm text-neutral-600 mt-1">
+              Usually replies within 24 hours
+            </p>
+          </div>
+
+          <a href="mailto:hello@yourdomain.com" className="btn-primary">
+            Send a message →
+          </a>
+        </div>
+
+        {/* ─── Secondary Contact Methods ───────────────── */}
+        <div className="space-y-2">
           {contactMethods.map((method) => {
             const Icon = method.icon;
 
@@ -46,55 +65,27 @@ export default function Contact() {
                 href={method.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-between py-5 border-b border-neutral-200 transition-colors hover:border-black"
+                className="contact-row group"
               >
-                {/* Left side */}
                 <div className="flex items-center gap-4">
-                  <Icon className="text-neutral-600 group-hover:text-black transition-colors text-lg" />
+                  <Icon className="contact-icon" />
 
                   <div>
-                    <p className="text-sm font-medium text-neutral-900">
-                      {method.label}
-                    </p>
-                    <p className="text-sm text-neutral-500">{method.value}</p>
+                    <p className="contact-label">{method.label}</p>
+                    <p className="contact-value">{method.value}</p>
                   </div>
                 </div>
 
-                {/* Arrow */}
-                <span className="text-neutral-400 group-hover:text-black group-hover:translate-x-1 transition-all">
-                  →
-                </span>
+                <span className="contact-arrow">→</span>
               </a>
             );
           })}
         </div>
 
-        {/* ─── Email CTA (soft emphasis, not a “button hero”) ───────────────── */}
-        <div className="border border-neutral-200 rounded-lg p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <div>
-            <p className="text-sm uppercase tracking-wider text-neutral-500 mb-2">
-              Direct email
-            </p>
-
-            <p className="text-neutral-900 font-medium">hello@yourdomain.com</p>
-
-            <p className="text-sm text-neutral-600 mt-1">
-              Typically replies within 24 hours
-            </p>
-          </div>
-
-          <a
-            href="mailto:hello@yourdomain.com"
-            className="px-6 py-3 bg-black text-white text-sm font-medium rounded hover:translate-y-[-2px] transition-all w-fit"
-          >
-            Send email →
-          </a>
-        </div>
-
         {/* ─── Footer ───────────────── */}
-        <div className="mt-20 pt-10 border-t border-neutral-200 text-center text-sm text-neutral-500 space-y-2">
+        <div className="mt-16 pt-8 border-t pb-4 border-neutral-200 text-center text-sm text-neutral-500 space-y-1">
           <p>Built with React & Tailwind</p>
-          <p>© 2024 — All rights reserved</p>
+          <p>© 2026 Shoaib Dev — All rights reserved</p>
         </div>
       </div>
     </section>

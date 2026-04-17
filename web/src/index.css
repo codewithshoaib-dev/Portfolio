@@ -63,6 +63,10 @@
     @apply max-w-7xl mx-auto;
   }
 
+    .section-subheading {
+    @apply mt-4 text-neutral-600 text-4xl font-semibold tracking-tight max-w-2xl;
+  }
+
     /* ─── Buttons ───────────────── */
   .btn-primary {
     @apply px-8 py-4 bg-black text-white rounded-md font-medium
@@ -83,11 +87,8 @@
     @apply mt-4 p-4 border border-neutral-200 rounded-lg;
   }
 
-  /* __Projects.jsx____ */
+  /* __Projects.tsx_____________ */
 
-   .section-subheading {
-    @apply mt-4 text-neutral-600 text-4xl font-semibold tracking-tight max-w-2xl;
-  }
 
     /* Card */
   .project-card {
@@ -131,6 +132,38 @@
 
   .project-link:hover {
     @apply translate-x-1;
+  }
+
+  /* __Contact.tsx______________ */
+
+   .contact-row {
+    @apply flex items-center justify-between py-5 border-b border-neutral-200
+           transition-colors duration-200 ease-out
+           hover:border-neutral-900;
+  }
+
+  .contact-icon {
+    @apply text-neutral-500 transition-colors duration-200 ease-out;
+  }
+
+  .contact-row:hover .contact-icon {
+    @apply text-neutral-900;
+  }
+
+  .contact-label {
+    @apply text-sm font-medium text-neutral-900;
+  }
+
+  .contact-value {
+    @apply text-sm text-neutral-500;
+  }
+
+  .contact-arrow {
+    @apply text-neutral-400 transition-transform duration-200 ease-out;
+  }
+
+  .contact-row:hover .contact-arrow {
+    @apply translate-x-1 text-neutral-900;
   }
 
 
