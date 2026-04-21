@@ -34,7 +34,10 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="border-b border-neutral-200 py-24 px-6 ">
+    <section
+      id="projects"
+      className="border-b bg-background selection:bg-neutral-900 selection:text-white border-neutral-200 py-24 px-6 "
+    >
       <div className="container-max">
         {/*  Headings  */}
         <h2 className="text-sm uppercase tracking-wider text-neutral-500 mb-4">
@@ -58,7 +61,11 @@ const Projects = () => {
             >
               {/* Image */}
               <div className="project-media">
-                <img src={proj.image} alt={proj.title} className="project-image" />
+                <img
+                  src={proj.image}
+                  alt={proj.title}
+                  className="project-image"
+                />
               </div>
 
               {/* Content */}

@@ -99,8 +99,9 @@
 
   /* Image container */
   .project-media {
-    @apply relative h-56 overflow-hidden border-b border-neutral-200;
-  }
+  @apply relative w-full overflow-hidden border-b border-neutral-200;
+  aspect-ratio: 16 / 10;
+}
 
   .project-image {
     @apply w-full h-full object-cover
