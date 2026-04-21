@@ -17,7 +17,10 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="border-b border-neutral-200 px-6 pt-24">
+    <section
+      id="contact"
+      className="border-b bg-background border-neutral-200 selection:text-white selection:bg-neutral-800 px-6 pt-24"
+    >
       <div className="container-max">
         {/* ─── Header ───────────────── */}
         <div className="max-w-2xl mb-14">
@@ -31,7 +34,8 @@ export default function Contact() {
 
           <p className="text-base md:text-lg text-neutral-600 leading-relaxed">
             Need a website or web app for your business? Send a quick message
-            with what you’re looking for, and I’ll get back with a clear next step.
+            with what you’re looking for, and I’ll get back with a clear next
+            step.
           </p>
         </div>
 
@@ -55,7 +59,7 @@ export default function Contact() {
         </div>
 
         {/* ─── Secondary Contact Methods ───────────────── */}
-        <div className="space-y-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl">
           {contactMethods.map((method) => {
             const Icon = method.icon;
 
