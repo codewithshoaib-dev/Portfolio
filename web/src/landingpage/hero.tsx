@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden border-b border-neutral-200 px-6 pt-16 md:pt-20 pb-20 md:pb-24"
+      className="relative overflow-hidden border-b border-neutral-200 px-6 pt-16 lg:pt-6 pb-20 md:pb-24"
     >
       {/* ─── Grid Background ───────────────── */}
       <div
