@@ -2,21 +2,8 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden border-b border-neutral-200 px-6 pt-16 lg:pt-6 pb-20 md:pb-24"
+      className="relative overflow-hidden border-b bg-background selection:bg-neutral-900 selection:text-white border-neutral-200 px-6 pt-16 lg:pt-6 pb-20 md:pb-24"
     >
-      {/* ─── Grid Background ───────────────── */}
-      <div
-        className="
-          absolute inset-0 pointer-events-none
-          bg-[linear-gradient(to_right,rgba(0,0,0,0.04)_1px,transparent_1px),
-              linear-gradient(to_bottom,rgba(0,0,0,0.04)_1px,transparent_1px)]
-          bg-size-[48px_48px]
-        "
-      />
-
-      {/* Bottom fade */}
-      <div className="absolute inset-0 pointer-events-none bg-linear-to-b from-transparent via-transparent to-white" />
-
       {/* ─── Content ───────────────── */}
       <div className="container-max relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
