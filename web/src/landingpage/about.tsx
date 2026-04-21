@@ -8,116 +8,140 @@ import {
 } from "react-icons/si";
 
 export default function About() {
-  const capabilities = [
-    {
-      title: "Frontend builds",
-      points: [
-        "React and TypeScript interfaces",
-        "Responsive landing pages",
-        "Reusable UI components",
-      ],
-    },
-    {
-      title: "Backend work",
-      points: [
-        "Django REST APIs",
-        "Auth and business logic",
-        "PostgreSQL database design",
-      ],
-    },
-    {
-      title: "Product builds",
-      points: [
-        "MVPs and early SaaS setups",
-        "Dashboards and admin tools",
-        "Basic onboarding flows",
-      ],
-    },
-    {
-      title: "Integrations",
-      points: [
-        "Third-party APIs",
-        "Performance and UI fixes",
-        "Codebase improvements",
-      ],
-    },
-  ];
-
   const tools = [
-    { icon: SiReact, label: "React", color: "text-cyan-500" },
-    { icon: SiTypescript, label: "TypeScript", color: "text-blue-600" },
-    { icon: SiTailwindcss, label: "Tailwind", color: "text-sky-500" },
-    { icon: SiDjango, label: "Django", color: "text-green-700" },
-    { icon: SiPostgresql, label: "PostgreSQL", color: "text-indigo-600" },
-    { icon: SiVercel, label: "Vercel", color: "text-gray-700" },
+    { icon: SiReact, label: "React" },
+    { icon: SiTypescript, label: "TypeScript" },
+    { icon: SiTailwindcss, label: "Tailwind" },
+    { icon: SiDjango, label: "Django" },
+    { icon: SiPostgresql, label: "Postgres" },
+    { icon: SiVercel, label: "Vercel" },
   ];
 
   return (
-    <section id="about" className=" border-b border-neutral-200 px-6 py-20">
-      <div className="container-max">
-        {/* Header */}
-        <div className="mb-20 max-w-3xl">
-          <p className="text-sm uppercase tracking-wider text-neutral-500">
-            About
-          </p>
-
-          <h2 className="section-subheading mb-6">
-            Simple builds, clean structure
-          </h2>
-
-          <div className="space-y-5 text-neutral-600 text-lg leading-relaxed">
-            <p>
-              I mostly work with React, TypeScript, and Django REST APIs. I
-              prefer building complete features rather than isolated parts.
-            </p>
-
-            <p>
-              The focus is on clarity, performance, and keeping things easy to
-              extend later without unnecessary complexity.
-            </p>
-          </div>
-        </div>
-
-        {/* Capabilities */}
-        <div className="mb-20">
-          <p className="text-sm uppercase tracking-wider text-neutral-500 mb-8">
-            What I do
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
-            {capabilities.map((group) => (
-              <div key={group.title} className="space-y-4">
-                <h3 className="text-neutral-900 font-medium">{group.title}</h3>
-
-                <ul className="space-y-2 text-neutral-600">
-                  {group.points.map((point) => (
-                    <li key={point} className="flex gap-3">
-                      <span className="text-neutral-400">•</span>
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Tools */}
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
-          {tools.map(({ icon: Icon, label, color }) => (
-            <div
-              key={label}
-              className="flex items-center gap-2 text-neutral-500"
-            >
-              <Icon className={`text-base ${color}`} />
-              <span className="text-sm">{label}</span>
-            </div>
-          ))}
-        </div>
-
-        <p className="mt-6 text-sm text-neutral-600">
-          Available for freelance work and collaborations.
+    <section
+      id="about"
+      className="py-24 px-6 bg-background selection:bg-neutral-900 selection:text-white"
+    >
+      <div className="max-w-7xl mx-auto">
+        {/* Intro Section */}
+        <p className="text-sm uppercase tracking-wider text-neutral-500 mb-4">
+          Overview
         </p>
+        <div className="grid lg:grid-cols-2 gap-12 items-start mb-24">
+          <div>
+            <h2 className="text-4xl font-medium tracking-tight text-neutral-900 mb-6">
+              I help small businesses improve their websites.
+            </h2>
+            <p className="text-xl text-neutral-500 leading-relaxed max-w-lg">
+              Most sites are slow, unclear, or outdated. I design and build
+              modern, high-performance pages that are easier to use and more
+              effective.
+            </p>
+          </div>
+          <div className="pt-2">
+            <div className="grid grid-cols-[repeat(auto-fit,minmax(140px,1fr))] gap-3">
+              {tools.map(({ icon: Icon, label }) => (
+                <div
+                  key={label}
+                  className="flex items-center justify-center gap-2 px-4 py-2 bg-neutral-50 border border-neutral-200 rounded-full text-neutral-600 transition-colors hover:border-neutral-400"
+                >
+                  <Icon className="text-sm" />
+                  <span className="text-xs font-medium uppercase tracking-wider">
+                    {label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <p className="text-2xl text-neutral-700 max-w-2xl mb-12 leading-relaxed">
+          Whether you're starting from scratch or improving what you already
+          have, I build fast, clear web experiences that help your business
+          attract and convert customers.
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-10">
+          {/* Group 1 */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-4">
+              Customer-Facing
+            </h3>
+
+            <div className="space-y-3">
+              {[
+                {
+                  title: "Landing Pages",
+                  desc: "Focused pages built to turn visitors into leads.",
+                },
+                {
+                  title: "Business Websites",
+                  desc: "Modern, clear sites that represent your business properly.",
+                },
+                {
+                  title: "Website Redesigns",
+                  desc: "Improve outdated or underperforming sites.",
+                },
+                {
+                  title: "Mobile Optimization",
+                  desc: "Ensure your site works smoothly on all devices.",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="p-4 border border-neutral-300 rounded-lg hover:border-neutral-900 transition-colors"
+                >
+                  <h4 className="text-base font-medium text-neutral-900">
+                    {item.title}
+                  </h4>
+                  <p className="text-sm text-neutral-600 mt-1 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Group 2 */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-4">
+              Functionality
+            </h3>
+
+            <div className="space-y-3">
+              {[
+                {
+                  title: "Booking Systems",
+                  desc: "Let customers schedule and interact",
+                },
+                {
+                  title: "Payment Integration",
+                  desc: "Accept payments securely with stripe integration.",
+                },
+                {
+                  title: "Admin Dashboards",
+                  desc: "Manage content, users, or data",
+                },
+                {
+                  title: "Custom Features",
+                  desc: "Built around your specific business needs.",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="p-4 border border-neutral-300 rounded-lg hover:border-neutral-900 transition-colors"
+                >
+                  <h4 className="text-base font-medium text-neutral-900">
+                    {item.title}
+                  </h4>
+                  <p className="text-sm text-neutral-600 mt-1 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
