@@ -49,7 +49,7 @@ export default function Contact() {
             </p>
           </div>
 
-          <a href="mailto:hello@yourdomain.com" className="btn-primary">
+          <a href="mailto:shoaib@gosaasuild.com" className="btn-primary">
             Send a message →
           </a>
         </div>
