@@ -26,6 +26,8 @@
 
   /* Radius */
   --radius: 0.5rem;
+
+  scrollbar-gutter: stable;
 }
 
 
@@ -168,4 +170,8 @@
 
 
   
+}
+
+.ease-premium {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
