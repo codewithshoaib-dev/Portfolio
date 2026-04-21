@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import {  FaLinkedin } from "react-icons/fa";
 
 type Props = {
   isOpen: boolean;

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import ContactModal from "./contactmodal";
 
 export default function Navbar() {
