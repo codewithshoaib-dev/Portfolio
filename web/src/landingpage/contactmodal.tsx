@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {  FaLinkedin } from "react-icons/fa";
+import { Toast } from "./Toast";
 
 type Props = {
   isOpen: boolean;
@@ -7,6 +8,8 @@ type Props = {
 };
 
 export default function ContactModal({ isOpen, onClose }: Props) {
+    const [isToast, setIsToast] = useState(false)
+
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "auto";
 
@@ -32,7 +35,7 @@ export default function ContactModal({ isOpen, onClose }: Props) {
   const handleCopyEmail = async () => {
     try {
       await navigator.clipboard.writeText("codewithshoaib.dev@gmail.com");
-      alert("Email copied to clipboard");
+       setIsToast(true);
     } catch {
       alert(`Copy failed. Email: ${"codewithshoaib.dev@gmail.com"}`);
     }
@@ -97,6 +100,12 @@ export default function ContactModal({ isOpen, onClose }: Props) {
           </button>
         </div>
       </div>
+      
+      <Toast
+        message="Email copied to clipboard!"
+        show={isToast}
+        setToast={setIsToast}
+      />
     </div>
   );
 }

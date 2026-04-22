@@ -1,6 +1,11 @@
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { useState } from "react";
+import { Toast } from "./Toast";
 
 export default function Contact() {
+
+  const [isToast, setIsToast] = useState(false)
+  
   const contactMethods = [
     {
       icon: FaLinkedin,
@@ -19,7 +24,7 @@ export default function Contact() {
   const handleCopyEmail = async () => {
     try {
       await navigator.clipboard.writeText("codewithshoaib.dev@gmail.com");
-      alert("Email copied to clipboard");
+      setIsToast(true)
     } catch {
       alert(`Copy failed. Email: ${"codewithshoaib.dev@gmail.com"}`);
     }
@@ -103,6 +108,7 @@ export default function Contact() {
           <p>© 2026 Shoaib Dev — All rights reserved</p>
         </div>
       </div>
+      <Toast message="Email copied to clipboard!" show={isToast} setToast={setIsToast} />
     </section>
   );
 }
