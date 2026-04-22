@@ -5,6 +5,7 @@ import deployly_hero from "../assets/images-optimized/deployly_hero.webp";
 import subscripto_form from "../assets/images-optimized/subscripto_form.webp";
 import console_dash from "../assets/images-optimized/console_dash.webp";
 
+
 const projects = [
   {
     id: 1,
