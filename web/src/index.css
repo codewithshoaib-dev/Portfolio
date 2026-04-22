@@ -104,8 +104,11 @@
 }
 
   .project-image {
-    @apply w-full h-full object-cover
+    @apply w-full h-full object-contain
            transition-transform duration-300 ease-out;
+     padding: 0.5rem; /* create separation */
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
   }
 
   .project-card:hover .project-image {
@@ -166,6 +169,29 @@
   .contact-row:hover .contact-arrow {
     @apply translate-x-1 text-neutral-900;
   }
+
+  /*  ___Toast.tsx__________ */
+   .toast {
+  @apply fixed top-19 left-1/2 
+         px-4 py-2 rounded-full
+         text-sm font-medium
+         bg-foreground text-background
+         shadow-md
+         pointer-events-none
+         z-51;
+
+  transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+
+  transform: translate(-50%, calc(-100% - 6rem)); 
+}
+
+.toast--visible {
+  @apply pointer-events-auto;
+
+  /* Return to the natural position defined by top-20 */
+  transform: translate(-50%, 0);
+}
 
 
   

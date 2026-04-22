@@ -1,9 +1,9 @@
 
 
 
-import deployly_hero from "../assets/optimized_images/deployly_hero.webp";
-import subscripto_pricing from "../assets/optimized_images/subscripto_pricing.webp";
-import admin_dash from "../assets/optimized_images/admin_dash.webp";
+import deployly_hero from "../assets/images-optimized/deployly_hero.webp";
+import subscripto_form from "../assets/images-optimized/subscripto_form.webp";
+import console_dash from "../assets/images-optimized/console_dash.webp";
 
 const projects = [
   {
@@ -12,7 +12,7 @@ const projects = [
     description:
       "A secure workspace for teams to manage csv files, contacts, users, and other operations in one place.",
     link: "/projects/console",
-    image: admin_dash,
+    image: console_dash,
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const projects = [
     description:
       "A complete subscription system with signup, pricing, and payments—built to handle customers smoothly.",
     link: "/projects/subscripto",
-    image: subscripto_pricing,
+    image: subscripto_form,
   },
 ];
 

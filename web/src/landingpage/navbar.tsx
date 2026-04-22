@@ -25,7 +25,7 @@ export default function Navbar() {
     },
     {
       label: "LinkedIn",
-      href: "https://linkedin.com/in/yourusername",
+      href: "https://linkedin.com/in/shoaib-gondal-a01a28358",
       icon: FaLinkedin,
     },
   ];

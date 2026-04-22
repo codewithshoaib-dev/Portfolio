@@ -6,15 +6,24 @@ export default function Contact() {
       icon: FaLinkedin,
       label: "LinkedIn",
       value: "See my professional background",
-      href: "https://linkedin.com",
+      href: "https://linkedin.com/in/shoaib-gondal-a01a28358",
     },
     {
       icon: FaGithub,
       label: "GitHub",
       value: "Browse code and projects",
-      href: "https://github.com",
+      href: "https://github.com/codewithshoaib-dev",
     },
   ];
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText("codewithshoaib.dev@gmail.com");
+      alert("Email copied to clipboard");
+    } catch {
+      alert(`Copy failed. Email: ${"codewithshoaib.dev@gmail.com"}`);
+    }
+  };
 
   return (
     <section
@@ -46,16 +55,18 @@ export default function Contact() {
               Email
             </p>
 
-            <p className="text-neutral-900 font-medium">hello@yourdomain.com</p>
+            <p className="text-neutral-900 font-medium">
+              codewithshoaib.dev@gmail.com
+            </p>
 
             <p className="text-sm text-neutral-600 mt-1">
               Usually replies within 24 hours
             </p>
           </div>
 
-          <a href="mailto:shoaib@gosaasuild.com" className="btn-primary">
-            Send a message →
-          </a>
+          <button onClick={handleCopyEmail} className="btn-primary">
+            Copy Email
+          </button>
         </div>
 
         {/* ─── Secondary Contact Methods ───────────────── */}

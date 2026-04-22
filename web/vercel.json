@@ -1,0 +1,19 @@
+{
+  "redirects": [
+    {
+      "source": "/projects/subscripto",
+      "destination": "https://subscripto.vercel.app",
+      "permanent": false
+    },
+    {
+      "source": "/projects/deployly",
+      "destination": "https://deployly-azure.vercel.app",
+      "permanent": false
+    },
+    {
+      "source": "/projects/console",
+      "destination": "https://console-eight-omega.vercel.app/",
+      "permanent": false
+    }
+  ]
+}

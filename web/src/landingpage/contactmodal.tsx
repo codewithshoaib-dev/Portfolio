@@ -26,7 +26,16 @@ export default function ContactModal({ isOpen, onClose }: Props) {
 
   const handleEmailRedirect = () => {
     window.location.href =
-      "mailto:youremail@example.com?subject=Project Inquiry&body=Hi Shoaib,%0A%0AI'd like to discuss a project with you.";
+      "mailto:codewithshoaib.dev@gmail.com?subject=Project Inquiry&body=Hi Shoaib,%0A%0AI'd like to discuss a project with you.";
+  };
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText("codewithshoaib.dev@gmail.com");
+      alert("Email copied to clipboard");
+    } catch {
+      alert(`Copy failed. Email: ${"codewithshoaib.dev@gmail.com"}`);
+    }
   };
 
   return (
@@ -45,8 +54,8 @@ export default function ContactModal({ isOpen, onClose }: Props) {
             Get in touch
           </h3>
           <p className="text-sm text-muted-foreground">
-            This will open your email app with a pre-filled message so you can
-            quickly reach out.
+            Reach out via email or copy the address if you prefer using your own
+            email setup.
           </p>
         </div>
 
@@ -60,8 +69,16 @@ export default function ContactModal({ isOpen, onClose }: Props) {
             Open Email Draft
           </button>
 
+          <button
+            type="button"
+            onClick={handleCopyEmail}
+            className="w-full py-2 rounded-md text-sm font-medium border border-border text-foreground hover:bg-secondary transition-colors"
+          >
+            Copy Email Address
+          </button>
+
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="linkedin.com/in/shoaib-gondal-a01a28358"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 w-full py-2 rounded-md text-sm font-medium border border-border text-foreground hover:bg-secondary transition-colors"
@@ -74,7 +91,7 @@ export default function ContactModal({ isOpen, onClose }: Props) {
           <button
             type="button"
             onClick={onClose}
-            className="w-full py-2 rounded-md text-sm font-medium text-muted-foreground border border-border hover:text-foreground bg-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            className="w-full py-2 rounded-md text-sm font-medium text-muted-foreground border border-border hover:text-foreground bg-card transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
           >
             Cancel
           </button>
