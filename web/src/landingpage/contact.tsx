@@ -1,6 +1,7 @@
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { useState } from "react";
 import { Toast } from "./Toast";
+import contactLinks from "../utils/contacts";
 
 export default function Contact() {
 
@@ -11,22 +12,22 @@ export default function Contact() {
       icon: FaLinkedin,
       label: "LinkedIn",
       value: "See my professional background",
-      href: "https://linkedin.com/in/shoaib-gondal-a01a28358",
+      href: contactLinks.LinkedIn,
     },
     {
       icon: FaGithub,
       label: "GitHub",
       value: "Browse code and projects",
-      href: "https://github.com/codewithshoaib-dev",
+      href: contactLinks.Github,
     },
   ];
 
   const handleCopyEmail = async () => {
     try {
-      await navigator.clipboard.writeText("codewithshoaib.dev@gmail.com");
+      await navigator.clipboard.writeText(contactLinks.Email);
       setIsToast(true)
     } catch {
-      alert(`Copy failed. Email: ${"codewithshoaib.dev@gmail.com"}`);
+      alert(`Copy failed. Email: ${contactLinks.Email}`);
     }
   };
 
@@ -61,7 +62,7 @@ export default function Contact() {
             </p>
 
             <p className="text-neutral-900 font-medium">
-              codewithshoaib.dev@gmail.com
+              {contactLinks.Email}
             </p>
 
             <p className="text-sm text-neutral-600 mt-1">

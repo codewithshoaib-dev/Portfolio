@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import {  FaLinkedin } from "react-icons/fa";
 import { Toast } from "./Toast";
+import contactLinks from "../utils/contacts";
 
 type Props = {
   isOpen: boolean;
@@ -29,15 +30,15 @@ export default function ContactModal({ isOpen, onClose }: Props) {
 
   const handleEmailRedirect = () => {
     window.location.href =
-      "mailto:codewithshoaib.dev@gmail.com?subject=Project Inquiry&body=Hi Shoaib,%0A%0AI'd like to discuss a project with you.";
+      `mailto:${contactLinks.Email}?subject=Project Inquiry&body=Hi Shoaib,%0A%0AI'd like to discuss a project with you.`;
   };
 
   const handleCopyEmail = async () => {
     try {
-      await navigator.clipboard.writeText("codewithshoaib.dev@gmail.com");
+      await navigator.clipboard.writeText(contactLinks.Email);
        setIsToast(true);
     } catch {
-      alert(`Copy failed. Email: ${"codewithshoaib.dev@gmail.com"}`);
+      alert(`Copy failed. Email: ${contactLinks.Email}`);
     }
   };
 
@@ -81,7 +82,7 @@ export default function ContactModal({ isOpen, onClose }: Props) {
           </button>
 
           <a
-            href="linkedin.com/in/shoaib-gondal-a01a28358"
+            href={contactLinks.LinkedIn}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 w-full py-2 rounded-md text-sm font-medium border border-border text-foreground hover:bg-secondary transition-colors"
@@ -90,7 +91,7 @@ export default function ContactModal({ isOpen, onClose }: Props) {
             Message on LinkedIn
           </a>
 
-          {/* Improved Cancel */}
+          {/* Cancel */}
           <button
             type="button"
             onClick={onClose}

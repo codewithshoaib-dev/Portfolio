@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import ContactModal from "./contactmodal";
+import contactLinks from "../utils/contacts";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,12 +21,12 @@ export default function Navbar() {
   const socials = [
     {
       label: "GitHub",
-      href: "https://github.com/codewithshoaib-dev/",
+      href: contactLinks.Github,
       icon: FaGithub,
     },
     {
       label: "LinkedIn",
-      href: "https://linkedin.com/in/shoaib-gondal-a01a28358",
+      href: contactLinks.LinkedIn,
       icon: FaLinkedin,
     },
   ];
