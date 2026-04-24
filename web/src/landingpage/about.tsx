@@ -24,7 +24,7 @@ export default function About() {
     >
       <div className="max-w-7xl mx-auto">
         {/* Intro Section */}
-        <p className="text-sm uppercase tracking-wider text-neutral-500 mb-4">
+        <p className="text-sm uppercase tracking-wider text-muted-foreground mb-4">
           Overview
         </p>
         <div className="grid lg:grid-cols-2 gap-12 items-start mb-24">
@@ -32,7 +32,7 @@ export default function About() {
             <h2 className="text-4xl font-medium tracking-tight text-neutral-900 mb-6">
               I help small businesses improve their websites.
             </h2>
-            <p className="text-xl text-neutral-500 leading-relaxed max-w-lg">
+            <p className="text-xl text-foreground leading-relaxed max-w-lg">
               Most sites are slow, unclear, or outdated. I design and build
               modern, high-performance pages that are easier to use and more
               effective.
@@ -56,15 +56,14 @@ export default function About() {
         </div>
 
         <p className="text-2xl text-neutral-700 max-w-2xl mb-12 leading-relaxed">
-          Whether you're starting from scratch or improving what you already
-          have, I build fast, clear web experiences that help your business
-          attract and convert customers.
+          The work typically falls into two areas: customer-facing design and
+          functional systems that support real business operations.
         </p>
 
         <div className="grid md:grid-cols-2 gap-10">
           {/* Group 1 */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">
               Customer-Facing
             </h3>
 
@@ -104,7 +103,7 @@ export default function About() {
 
           {/* Group 2 */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">
               Functionality
             </h3>
 

@@ -47,8 +47,8 @@ export default function Navbar() {
           <div className="w-5 h-5 bg-black rounded-sm flex items-center justify-center">
             <div className="w-2 h-2 bg-white rotate-45" />
           </div>
-          <span className="text-sm font-bold tracking-tighter text-gray-900 uppercase">
-            Shoaib<span className="text-gray-400 font-medium">.Dev</span>
+          <span className="text-sm font-bold tracking-tight text-gray-900 uppercase">
+            ShoaibCodes
           </span>
         </div>
 
@@ -58,7 +58,7 @@ export default function Navbar() {
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className="px-4 py-1.5 text-[13px] font-medium text-muted hover:text-foreground hover:bg-card rounded-full transition-colors duration-200"
+              className="px-4 py-1.5 text-[13px] font-medium text-muted-foreground hover:text-foreground hover:bg-card rounded-full transition-colors duration-200"
             >
               {item.label}
             </button>
@@ -74,7 +74,7 @@ export default function Navbar() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted hover:text-foreground transition-colors duration-200"
+                className="text-muted-foreground hover:text-foreground transition-colors duration-200"
                 aria-label={label}
               >
                 <Icon className="w-4 h-4" />
@@ -142,7 +142,7 @@ export default function Navbar() {
                       : "translate-y-8 opacity-0"
                   }`}
                 >
-                  <span className="text-xs font-mono text-muted group-hover:text-foreground">
+                  <span className="text-xs font-mono text-muted-foreground group-hover:text-foreground">
                     0{index + 1}
                   </span>
                   <span className="hover:pl-4 transition-[padding] duration-300">
@@ -180,7 +180,10 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-      <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)}  />
+      <ContactModal
+        isOpen={isContactOpen}
+        onClose={() => setIsContactOpen(false)}
+      />
     </nav>
   );
 }

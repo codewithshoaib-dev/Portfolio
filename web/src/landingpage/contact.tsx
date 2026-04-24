@@ -38,7 +38,7 @@ export default function Contact() {
       <div className="container-max">
         {/* ─── Header ───────────────── */}
         <div className="max-w-2xl mb-14">
-          <p className="text-sm uppercase tracking-wider text-neutral-500 mb-4">
+          <p className="text-sm uppercase tracking-wider text-muted-foreground mb-4">
             Contact
           </p>
 

@@ -41,7 +41,7 @@ const Projects = () => {
     >
       <div className="container-max">
         {/*  Headings  */}
-        <h2 className="text-sm uppercase tracking-wider text-neutral-500 mb-4">
+        <h2 className="text-sm uppercase tracking-wider text-muted-foreground mb-4">
           Selected Work
         </h2>
 

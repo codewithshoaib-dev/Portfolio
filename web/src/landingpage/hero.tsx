@@ -10,7 +10,7 @@ export default function Hero() {
           {/* ─── Left Content ───────────────── */}
           <div className="max-w-2xl">
             {/* Eyebrow */}
-            <p className="text-sm tracking-[0.12em] uppercase text-neutral-500 mb-6">
+            <p className="text-sm tracking-[0.12em] uppercase text-neutral-600 mb-6">
               React • Django • API Integrations
             </p>
 
