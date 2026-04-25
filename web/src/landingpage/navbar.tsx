@@ -94,6 +94,7 @@ export default function Navbar() {
         {/* Mobile Toggle */}
         <button
           className="relative z-120 md:hidden flex flex-col gap-1.25 p-2 items-end outline-none group"
+          aria-label="Toggle Navigation"
           onClick={() => setIsOpen(!isOpen)}
         >
           <span

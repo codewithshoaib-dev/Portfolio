@@ -12,7 +12,7 @@ const projects = [
     title: "Console",
     description:
       "A secure workspace for teams to manage csv files, contacts, users, and other operations in one place.",
-    link: "/projects/console",
+    link: "https://console-project.shoaibcodes.com/",
     image: console_dash,
   },
   {
@@ -20,7 +20,7 @@ const projects = [
     title: "Deployly",
     description:
       "A high-converting landing page designed to clearly present the product and turn visitors into customers.",
-    link: "/projects/deployly",
+    link: "https://deployly-project.shoaibcodes.com/",
     image: deployly_hero,
   },
   {
@@ -28,7 +28,7 @@ const projects = [
     title: "Subscripto",
     description:
       "A complete subscription system with signup, pricing, and payments—built to handle customers smoothly.",
-    link: "/projects/subscripto",
+    link: "https://subscripto-project.shoaibcodes.com/",
     image: subscripto_form,
   },
 ];
