@@ -5,6 +5,7 @@ import deployly_hero from "../assets/images-optimized/deployly_hero.webp";
 import subscripto_form from "../assets/images-optimized/Subscripto_form.webp";
 import console_dash from "../assets/images-optimized/console_dash.webp";
 
+import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
@@ -37,7 +38,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="border-b bg-background selection:bg-neutral-900 selection:text-white border-neutral-200 py-24 px-6 "
+      className="border-b bg-background selection:bg-neutral-900 selection:text-white border-border py-16 md:py-24 px-6 "
     >
       <div className="container-max">
         {/*  Headings  */}
@@ -46,8 +47,8 @@ const Projects = () => {
         </h2>
 
         <p className="section-subheading mb-16">
-          Real projects built to attract customers, simplify workflows, and
-          support business growth.
+          A few things I've built. From SaaS interfaces to full-stack apps with
+          auth, payments, and real backend logic.
         </p>
 
         {/* Grid */}
@@ -56,27 +57,41 @@ const Projects = () => {
             <div
               key={proj.id}
               className={`
-                project-card group
-                
+                border border-neutral-200 rounded-xl bg-card overflow-hidden
+            transition-normal
+            hover:border-neutral-300
               `}
             >
               {/* Image */}
-              <div className="project-media">
+              <div className="relative w-full overflow-hidden border-b border-neutral-200 aspect-16/10">
                 <img
                   src={proj.image}
                   alt={proj.title}
-                  className="project-image"
+                  className="w-full h-full object-contain
+           transition-transform duration-300 ease-out"
                 />
               </div>
 
               {/* Content */}
-              <div className="project-content">
-                <h3 className="project-title">{proj.title}</h3>
+              <div className="p-5">
+                <h3 className="text-base font-semibold text-neutral-900">
+                  {proj.title}
+                </h3>
 
-                <p className="project-description">{proj.description}</p>
+                <p className="mt-2 text-sm text-neutral-600 leading-relaxed">
+                  {proj.description}
+                </p>
 
-                <a href={proj.link} className="project-link">
-                  View project →
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={proj.link}
+                  className=" mt-3 inline-flex items-center gap-1 text-sm font-medium text-neutral-900 group"
+                >
+                  View project{" "}
+                  <span className="inline-block transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1">
+                    <ArrowUpRight size={20} />
+                  </span>
                 </a>
               </div>
             </div>

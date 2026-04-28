@@ -8,8 +8,9 @@
   --foreground: #0a0a0a;
 
   /* Surfaces */
-  --card: #ffffff;
+  --card: #fffdf9;
   --border: #d1cdc7; 
+  --card-border: #e8e1d8;
 
   /* Primary UI */
   --primary: #0f0f0f;
@@ -20,9 +21,10 @@
   --muted: #8c8581; 
   --muted-foreground: #525252; 
 
-  /* Accent: Electric Blue */
-  --accent: #0088cc;
-  --accent-foreground: #ffffff;
+  /* Accent: Indigo */
+  --accent: #6366f1;
+  --accent-foreground: ##e0e7ff;
+
 
   /* Radius */
   --radius: 0.5rem;
@@ -48,9 +50,22 @@
   --color-muted-foreground: var(--muted-foreground);
 
   --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
 
   --radius-md: var(--radius);
   --radius-lg: calc(var(--radius) + 4px);
+
+  --color-card-border: var(--card-border);
+
+  --shadow-card:
+    0 1px 2px rgb(15 23 42 / 0.04),
+    0 8px 24px rgb(15 23 42 / 0.06),
+    0 20px 48px rgb(15 23 42 / 0.08);
+
+  --shadow-card-hover:
+    0 2px 4px rgb(15 23 42 / 0.06),
+    0 14px 32px rgb(15 23 42 / 0.10),
+    0 30px 60px rgb(15 23 42 / 0.12);
 }
 
 
@@ -70,73 +85,19 @@
     /* ─── Buttons ───────────────── */
   .btn-primary {
     @apply px-8 py-4 bg-black text-white rounded-md font-medium
-           transition-transform duration-200 ease-in-out
-           hover:-translate-y-0.5;
+           transition-transform duration-200  will-change-transform
+           hover:scale-105 shadow;
   }
 
   .btn-secondary {
-    @apply px-8 py-4 border border-neutral-400 rounded-md font-medium bg-white will-change-transform transition-transform hover:-translate-y-0.5;
+    @apply px-8 py-4 border-2 shadow-lg border-neutral-400 rounded-md font-medium bg-white transition-all hover:scale-105;
   }
 
-  /* ─── Preview UI ───────────────── */
-  .preview-line {
-    @apply h-2.5 bg-neutral-200 rounded mb-3;
+    .card {
+    @apply relative rounded-3xl border bg-card p-6 shadow-card hover:shadow-card-hover border-border;
+
   }
 
-  .preview-card {
-    @apply mt-4 p-4 border border-neutral-200 rounded-lg;
-  }
-
-  /* __Projects.tsx_____________ */
-
-
-    /* Card */
-  .project-card {
-    @apply border border-neutral-200 rounded-xl bg-background overflow-hidden
-           transition-normal
-            hover:border-neutral-300;
-  }
-
-  /* Image container */
-  .project-media {
-  @apply relative w-full overflow-hidden border-b border-neutral-200;
-  aspect-ratio: 16 / 10;
-}
-
-  .project-image {
-    @apply w-full h-full object-contain
-           transition-transform duration-300 ease-out;
-     padding: 0.5rem; /* create separation */
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  }
-
-  .project-card:hover .project-image {
-    @apply scale-[1.04];
-  }
-
-  /* Content */
-  .project-content {
-    @apply p-5;
-  }
-
-  .project-title {
-    @apply text-base font-semibold text-neutral-900;
-  }
-
-  .project-description {
-    @apply mt-2 text-sm text-neutral-600 leading-relaxed;
-  }
-
-  /* Link */
-  .project-link {
-    @apply mt-3 inline-block text-sm font-medium text-neutral-900
-           transition-transform duration-200 ease-out;
-  }
-
-  .project-link:hover {
-    @apply translate-x-1;
-  }
 
   /* __Contact.tsx______________ */
 
@@ -199,4 +160,15 @@
 
 .ease-premium {
   transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  button:not(:disabled),
+  a[href] {
+    cursor: pointer;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
 }
