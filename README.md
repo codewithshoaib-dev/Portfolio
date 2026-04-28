@@ -1,6 +1,6 @@
 # Personal Portfolio
 
-A minimal, client-focused portfolio website built to showcase my work and help small businesses understand what I offer and how to get started.
+A minimal, client-focused portfolio website built to showcase my work and help SaaS businesses understand what I offer and how to get started.
 
 ## Overview
 
