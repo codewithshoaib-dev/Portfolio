@@ -7,6 +7,18 @@ import {
   SiVercel,
 } from "react-icons/si";
 
+import {
+  RxDashboard,
+  RxLockClosed,
+  RxRocket,
+  RxLayout,
+  RxLayers,
+  RxMixerHorizontal,
+  RxComponentInstance,
+} from "react-icons/rx";
+
+import { PiCreditCard } from "react-icons/pi";
+
 export default function About() {
   const tools = [
     { icon: SiReact, label: "React" },
@@ -17,27 +29,75 @@ export default function About() {
     { icon: SiVercel, label: "Vercel" },
   ];
 
+const productWork = [
+  {
+    title: "SaaS Dashboards",
+    icon: <RxDashboard />,
+    desc: "Data-rich interfaces with charts, filters, and real-time state — built to scale with your product.",
+  },
+  {
+    title: "Auth & User Roles",
+    icon: <RxLockClosed />,
+    desc: "JWT or session-based auth, role-based permissions, and multi-tenant account structures.",
+  },
+  {
+    title: "Onboarding Flows",
+    icon: <RxRocket />,
+    desc: "Step-by-step flows that get users to their first value moment without friction.",
+  },
+  {
+    title: "Landing Pages",
+    icon: <RxLayout />,
+    desc: "Conversion-optimized landing pages with high-performance scores and SEO-ready structure.",
+  },
+];
+
+const backendWork = [
+  {
+    title: "REST APIs",
+    icon: <RxLayers />,
+    desc: "Structured Django REST endpoints with proper serialization, filtering, and pagination.",
+  },
+  {
+    title: "Payment Integration",
+    icon: <PiCreditCard />,
+    desc: "Stripe subscriptions, one-time payments, and webhook event handling.",
+  },
+  {
+    title: "Third-Party Services",
+    icon: <RxMixerHorizontal />,
+    desc: "OAuth providers, email services, file storage, and external data sources wired cleanly.",
+  },
+  {
+    title: "Admin & Internal Tools",
+    icon: <RxComponentInstance />,
+    desc: "Custom panels to manage users, content, or operational data — beyond what Django admin offers.",
+  },
+];
+
   return (
     <section
       id="about"
-      className="py-24 px-6 bg-background selection:bg-neutral-900 selection:text-white"
+      className="py-16 md:py-24 px-6 border-b border-border bg-background selection:bg-neutral-900 selection:text-white"
     >
       <div className="max-w-7xl mx-auto">
-        {/* Intro Section */}
+        {/* ─── Intro ─── */}
         <p className="text-sm uppercase tracking-wider text-muted-foreground mb-4">
           Overview
         </p>
         <div className="grid lg:grid-cols-2 gap-12 items-start mb-24">
           <div>
             <h2 className="text-4xl font-medium tracking-tight text-neutral-900 mb-6">
-              I help small businesses improve their websites.
+              I help founders ship web apps that are built to last.
             </h2>
             <p className="text-xl text-foreground leading-relaxed max-w-lg">
-              Most sites are slow, unclear, or outdated. I design and build
-              modern, high-performance pages that are easier to use and more
-              effective.
+              Most early-stage products are held back by rushed code that's hard
+              to extend. I build full-stack applications with a clean foundation
+              so your codebase grows with your product, not against it.
             </p>
           </div>
+
+          {/* Tech stack pills */}
           <div className="pt-2">
             <div className="grid grid-cols-[repeat(auto-fit,minmax(140px,1fr))] gap-3">
               {tools.map(({ icon: Icon, label }) => (
@@ -54,92 +114,46 @@ export default function About() {
             </div>
           </div>
         </div>
-
-        <p className="text-2xl text-neutral-700 max-w-2xl mb-12 leading-relaxed">
-          The work typically falls into two areas: customer-facing design and
-          functional systems that support real business operations.
+        {/* ─── Section bridge ─── */}
+        <p className="text-2xl text-foreground max-w-2xl mb-12 leading-relaxed">
+          The work typically falls into two areas: the product your users
+          interact with, and the systems running underneath it.
         </p>
 
+        {/* ─── Service cards ─── */}
         <div className="grid md:grid-cols-2 gap-10">
-          {/* Group 1 */}
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">
-              Customer-Facing
-            </h3>
+          {[
+            { label: "Product & UI", data: productWork },
+            { label: "Backend & Integrations", data: backendWork },
+          ].map((section) => (
+            <div key={section.label} className="flex flex-col">
+              <h3 className="text-xs font-bold uppercase tracking-[0.15em] text-muted-foreground mb-6">
+                {section.label}
+              </h3>
 
-            <div className="space-y-3">
-              {[
-                {
-                  title: "Landing Pages",
-                  desc: "Focused pages built to turn visitors into leads.",
-                },
-                {
-                  title: "Business Websites",
-                  desc: "Modern, clear sites that represent your business properly.",
-                },
-                {
-                  title: "Website Redesigns",
-                  desc: "Improve outdated or underperforming sites.",
-                },
-                {
-                  title: "Mobile Optimization",
-                  desc: "Ensure your site works smoothly on all devices.",
-                },
-              ].map((item) => (
-                <div
-                  key={item.title}
-                  className="p-4 border border-neutral-300 rounded-lg hover:border-neutral-900 transition-colors"
-                >
-                  <h4 className="text-base font-medium text-neutral-900">
-                    {item.title}
-                  </h4>
-                  <p className="text-sm text-neutral-600 mt-1 leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
+            
+              <div className="grid grid-cols-1 gap-4">
+                {section.data.map((item) => (
+                  <div
+                    key={item.title}
+                    className="group flex flex-col h-full rounded-2xl border border-border bg-card p-5 transition-[border,shadow] duration-300 hover:border-neutral-900 hover:shadow-lg"
+                  >
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-neutral-50 text-neutral-900 border border-neutral-100 transition-colors group-hover:bg-neutral-900 group-hover:text-white">
+                        {item.icon}
+                      </div>
+                      <h4 className="text-[15px] font-semibold text-foreground">
+                        {item.title}
+                      </h4>
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-
-          {/* Group 2 */}
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">
-              Functionality
-            </h3>
-
-            <div className="space-y-3">
-              {[
-                {
-                  title: "Booking Systems",
-                  desc: "Let customers schedule and interact",
-                },
-                {
-                  title: "Payment Integration",
-                  desc: "Accept payments securely with stripe integration.",
-                },
-                {
-                  title: "Admin Dashboards",
-                  desc: "Manage content, users, or data",
-                },
-                {
-                  title: "Custom Features",
-                  desc: "Built around your specific business needs.",
-                },
-              ].map((item) => (
-                <div
-                  key={item.title}
-                  className="p-4 border border-neutral-300 rounded-lg hover:border-neutral-900 transition-colors"
-                >
-                  <h4 className="text-base font-medium text-neutral-900">
-                    {item.title}
-                  </h4>
-                  <p className="text-sm text-neutral-600 mt-1 leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

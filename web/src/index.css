@@ -94,7 +94,7 @@
   }
 
     .card {
-    @apply relative rounded-3xl border bg-card p-6 shadow-card hover:shadow-card-hover border-border;
+    @apply flex flex-col h-full rounded-3xl border bg-card p-6 shadow-card hover:shadow-card-hover border-border;
 
   }
 
