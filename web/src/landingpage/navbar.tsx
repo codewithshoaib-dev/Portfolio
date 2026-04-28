@@ -59,7 +59,7 @@ export default function Navbar() {
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className="px-4 py-1.5 text-[13px] font-medium text-muted-foreground hover:text-foreground hover:bg-card rounded-full transition-colors duration-200"
+              className="px-4 py-1.5 text-[15px] font-medium text-muted-foreground hover:text-foreground hover:bg-card rounded-full transition-colors duration-200"
             >
               {item.label}
             </button>
@@ -85,7 +85,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setIsContactOpen(true)}
-            className="ml-3 bg-black text-white px-4 py-1.5 rounded-full text-[13px] font-medium hover:bg-gray-800 transition-colors"
+            className="ml-3 bg-black text-white px-4 py-2 rounded-full text-[13px] font-medium hover:bg-gray-800 transition-colors"
           >
             Get in touch
           </button>
