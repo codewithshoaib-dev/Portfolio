@@ -93,44 +93,6 @@
     @apply px-8 py-4 border-2 shadow-lg border-neutral-400 rounded-md font-medium bg-white transition-all hover:scale-105;
   }
 
-    .card {
-    @apply flex flex-col h-full rounded-3xl border bg-card p-6 shadow-card hover:shadow-card-hover border-border;
-
-  }
-
-
-  /* __Contact.tsx______________ */
-
-   .contact-row {
-    @apply flex items-center justify-between py-5 border-b border-neutral-200
-           transition-colors duration-200 ease-out
-           hover:border-neutral-900;
-  }
-
-  .contact-icon {
-    @apply text-neutral-500 transition-colors duration-200 ease-out;
-  }
-
-  .contact-row:hover .contact-icon {
-    @apply text-neutral-900;
-  }
-
-  .contact-label {
-    @apply text-sm font-medium text-neutral-900;
-  }
-
-  .contact-value {
-    @apply text-sm text-neutral-500;
-  }
-
-  .contact-arrow {
-    @apply text-neutral-400 transition-transform duration-200 ease-out;
-  }
-
-  .contact-row:hover .contact-arrow {
-    @apply translate-x-1 text-neutral-900;
-  }
-
   /*  ___Toast.tsx__________ */
    .toast {
   @apply fixed top-19 left-1/2 
@@ -154,8 +116,6 @@
   transform: translate(-50%, 0);
 }
 
-
-  
 }
 
 .ease-premium {

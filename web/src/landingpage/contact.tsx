@@ -1,11 +1,12 @@
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { useState } from "react";
-import { Toast } from "./Toast";
+
 import contactLinks from "../utils/contacts";
+
+import { ArrowUpRight } from "lucide-react";
 
 export default function Contact() {
 
-  const [isToast, setIsToast] = useState(false)
+
   
   const contactMethods = [
     {
@@ -22,19 +23,14 @@ export default function Contact() {
     },
   ];
 
-  const handleCopyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText(contactLinks.Email);
-      setIsToast(true)
-    } catch {
-      alert(`Copy failed. Email: ${contactLinks.Email}`);
-    }
-  };
+   const handleEmailRedirect = () => {
+     window.location.href = `mailto:${contactLinks.Email}?subject=Project Inquiry&body=Hi Shoaib,%0A%0AI'd like to discuss a project with you.`;
+   };
 
   return (
     <section
       id="contact"
-      className="border-b bg-background border-neutral-200 selection:text-white selection:bg-neutral-800 px-6 pt-24"
+      className="border-b bg-background border-neutral-200 selection:text-white selection:bg-neutral-800 px-6 pt-16 md:pt-24"
     >
       <div className="container-max">
         {/* ─── Header ───────────────── */}
@@ -44,13 +40,13 @@ export default function Contact() {
           </p>
 
           <h2 className="section-subheading mb-5">
-            Let’s build something that works
+            Let's build something worth shipping
           </h2>
 
-          <p className="text-base md:text-lg text-neutral-600 leading-relaxed">
-            Need a website or web app for your business? Send a quick message
-            with what you’re looking for, and I’ll get back with a clear next
-            step.
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+            Have a product idea or an existing app that needs work? Send a quick
+            message with what you're working on and I'll get back with a clear
+            next step.
           </p>
         </div>
 
@@ -61,17 +57,15 @@ export default function Contact() {
               Email
             </p>
 
-            <p className="text-neutral-900 font-medium">
-              {contactLinks.Email}
-            </p>
+            <p className="text-neutral-900 font-medium">{contactLinks.Email}</p>
 
             <p className="text-sm text-neutral-600 mt-1">
               Usually replies within 24 hours
             </p>
           </div>
 
-          <button onClick={handleCopyEmail} className="btn-primary">
-            Copy Email
+          <button onClick={handleEmailRedirect} className="btn-primary">
+            Send an email
           </button>
         </div>
 
@@ -86,30 +80,37 @@ export default function Contact() {
                 href={method.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="contact-row group"
+                className="flex items-center justify-between py-5 border-b border-neutral-200
+             transition-colors duration-200 ease-out
+            hover:border-neutral-900 group"
               >
                 <div className="flex items-center gap-4">
-                  <Icon className="contact-icon" />
+                  <Icon className="text-neutral-500 transition-colors duration-200 ease-out group-hover:text-neutral-900" />
 
                   <div>
-                    <p className="contact-label">{method.label}</p>
-                    <p className="contact-value">{method.value}</p>
+                    <p className="text-sm font-medium text-neutral-900">
+                      {method.label}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      {method.value}
+                    </p>
                   </div>
                 </div>
 
-                <span className="contact-arrow">→</span>
+                <span className="text-neutral-400 transition-transform duration-200 ease-out group-hover:text-neutral-800">
+                  <ArrowUpRight size={20} />
+                </span>
               </a>
             );
           })}
         </div>
 
         {/* ─── Footer ───────────────── */}
-        <div className="mt-16 pt-8 border-t pb-4 border-neutral-200 text-center text-sm text-neutral-500 space-y-1">
+        <div className="mt-16 pt-8 border-t pb-4 border-neutral-200 text-center text-sm text-neutral-600 space-y-1">
           <p>Built with React & Tailwind</p>
-          <p>© 2026 Shoaib Dev — All rights reserved</p>
+          <p>© 2026 Shoaib Codes — All rights reserved</p>
         </div>
       </div>
-      <Toast message="Email copied to clipboard!" show={isToast} setToast={setIsToast} />
     </section>
   );
 }
