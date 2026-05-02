@@ -33,22 +33,22 @@ const productWork = [
   {
     title: "SaaS Dashboards",
     icon: <RxDashboard />,
-    desc: "Data-rich interfaces with charts, filters, and real-time state — built to scale with your product.",
+    desc: "Production dashboards with real-time state, filters, and scalable UI structure.",
   },
   {
     title: "Auth & User Roles",
     icon: <RxLockClosed />,
-    desc: "JWT or session-based auth, role-based permissions, and multi-tenant account structures.",
+    desc: "Secure authentication with role-based access and multi-tenant support.",
   },
   {
     title: "Onboarding Flows",
     icon: <RxRocket />,
-    desc: "Step-by-step flows that get users to their first value moment without friction.",
+    desc: "User flows designed to get users to value fast with minimal friction.",
   },
   {
     title: "Landing Pages",
     icon: <RxLayout />,
-    desc: "Conversion-optimized landing pages with high-performance scores and SEO-ready structure.",
+    desc: "Fast, conversion-focused SaaS landing pages with solid performance and SEO structure.",
   },
 ];
 
@@ -56,22 +56,22 @@ const backendWork = [
   {
     title: "REST APIs",
     icon: <RxLayers />,
-    desc: "Structured Django REST endpoints with proper serialization, filtering, and pagination.",
+    desc: "Clean Django APIs with proper structure, pagination, and filtering.",
   },
   {
-    title: "Payment Integration",
+    title: "Payments",
     icon: <PiCreditCard />,
-    desc: "Stripe subscriptions, one-time payments, and webhook event handling.",
+    desc: "Stripe and billing systems for SaaS subscriptions and one-time payments.",
   },
   {
-    title: "Third-Party Services",
+    title: "Integrations",
     icon: <RxMixerHorizontal />,
-    desc: "OAuth providers, email services, file storage, and external data sources wired cleanly.",
+    desc: "OAuth, email, storage, and third-party APIs wired into production systems.",
   },
   {
-    title: "Admin & Internal Tools",
+    title: "Internal Tools",
     icon: <RxComponentInstance />,
-    desc: "Custom panels to manage users, content, or operational data — beyond what Django admin offers.",
+    desc: "Custom admin tools for managing users, data, and operations beyond Django admin.",
   },
 ];
 
@@ -88,12 +88,13 @@ const backendWork = [
         <div className="grid lg:grid-cols-2 gap-12 items-start mb-24">
           <div>
             <h2 className="text-4xl font-medium tracking-tight text-neutral-900 mb-6">
-              I help founders ship web apps that are built to last.
+              I help founders ship SaaS products fast.
             </h2>
+
             <p className="text-xl text-foreground leading-relaxed max-w-lg">
-              Most early-stage products are held back by rushed code that's hard
-              to extend. I build full-stack applications with a clean foundation
-              so your codebase grows with your product, not against it.
+              I build production-ready SaaS systems with React and Django,
+              focused on shipping quickly, clean architecture, and features that
+              actually support real users in production.
             </p>
           </div>
 
@@ -116,22 +117,21 @@ const backendWork = [
         </div>
         {/* ─── Section bridge ─── */}
         <p className="text-2xl text-foreground max-w-2xl mb-12 leading-relaxed">
-          The work typically falls into two areas: the product your users
-          interact with, and the systems running underneath it.
+          Most work falls into two layers: what users interact with, and the
+          backend systems that make it work reliably in production.
         </p>
 
         {/* ─── Service cards ─── */}
         <div className="grid md:grid-cols-2 gap-10">
           {[
-            { label: "Product & UI", data: productWork },
-            { label: "Backend & Integrations", data: backendWork },
+            { label: "SaaS Product Layer", data: productWork },
+            { label: "Backend Systems", data: backendWork },
           ].map((section) => (
             <div key={section.label} className="flex flex-col">
               <h3 className="text-xs font-bold uppercase tracking-[0.15em] text-muted-foreground mb-6">
                 {section.label}
               </h3>
 
-            
               <div className="grid grid-cols-1 gap-4">
                 {section.data.map((item) => (
                   <div

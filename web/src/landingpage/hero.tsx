@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden border-b bg-background selection:bg-neutral-900 selection:text-white border-neutral-200 px-6 pt-16 lg:pt-6 pb-20 md:pb-24"
+      className="relative overflow-hidden border-b bg-background selection:bg-neutral-900 selection:text-white border-border px-6 pt-16 lg:pt-6 pb-20 md:pb-24"
     >
       <div className="container-max relative z-10">
         <div className="grid items-center gap-12 lg:grid-cols-2">
@@ -18,14 +18,13 @@ export default function Hero() {
             </div>
 
             <h1 className="max-w-[28ch] text-[2.75rem] font-semibold leading-[1.1] tracking-tight text-foreground sm:text-[3.25rem] lg:text-[3.75rem]">
-              Hi, I&apos;m Shoaib, I build SaaS products that
-              <span className="text-accent"> actually ship</span>
+              Hi, I’m Shoaib, I help founders ship SaaS products
+              <span className="text-accent font-bold"> fast</span>
             </h1>
 
             <p className="mt-8 max-w-xl text-lg text-foreground">
-              Full-stack developer specializing in React and Django. I help
-              founders and small teams turn ideas into maintainable,
-              production-ready software.
+              From idea to production-ready React and Django systems, focused on
+              usability, scalability, and getting real users live quickly.
             </p>
 
             <div className="mt-12 flex flex-col gap-4 sm:flex-row">
@@ -67,10 +66,10 @@ export default function Hero() {
               </div>
               <div>
                 <p className="text-sm font-bold text-foreground">
-                  Fast by default
+                  Fast SaaS MVP 
                 </p>
                 <p className="text-xs text-muted-foreground">
-                  Optimized performance
+                  Turn ideas into systems
                 </p>
               </div>
             </div>
@@ -94,10 +93,10 @@ export default function Hero() {
               </div>
               <div>
                 <p className="text-sm font-bold text-foreground">
-                  Auth & user roles
+                  Auth & roles
                 </p>
                 <p className="text-xs text-muted-foreground">
-                  Secure RBAC systems
+                  Secure user access
                 </p>
               </div>
             </div>
@@ -124,7 +123,7 @@ export default function Hero() {
                   Payment & billing
                 </p>
                 <p className="text-xs text-muted-foreground">
-                  Stripe & Lemonsqueezy
+                  Stripe / Lemonsqueezy
                 </p>
               </div>
             </div>
