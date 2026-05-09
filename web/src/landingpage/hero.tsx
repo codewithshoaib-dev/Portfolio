@@ -1,3 +1,33 @@
+import {
+  HiBolt,
+  HiShieldCheck,
+  HiCreditCard,
+  HiCircleStack,
+} from "react-icons/hi2";
+
+const features = [
+  {
+    title: "Fast SaaS MVP",
+    description: "Turn ideas into systems",
+    icon: HiBolt,
+  },
+  {
+    title: "Auth & roles",
+    description: "Secure user access",
+    icon: HiShieldCheck,
+  },
+  {
+    title: "Payment & billing",
+    description: "Stripe integration",
+    icon: HiCreditCard,
+  },
+  {
+    title: "API integration",
+    description: "REST & Third-party sync",
+    icon: HiCircleStack,
+  },
+];
+
 export default function Hero() {
   return (
     <section
@@ -12,17 +42,17 @@ export default function Hero() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75"></span>
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-accent"></span>
               </span>
-              <span className="text-xs font-bold uppercase tracking-wider text-accent">
+              <span className="text-sm font-bold uppercase tracking-wider text-accent">
                 Available for new projects
               </span>
             </div>
 
-            <h1 className="max-w-[28ch] text-[2.75rem] font-semibold leading-[1.1] tracking-tight text-foreground sm:text-[3.25rem] lg:text-[3.75rem]">
+            <h1 className="max-w-[28ch] text-[2.75rem] font-semibold leading-[1.1] tracking-tight text-foreground sm:text-[2.75rem] lg:text-[3rem]">
               Hi, I’m Shoaib, I help founders ship SaaS products
               <span className="text-accent font-bold"> fast</span>
             </h1>
 
-            <p className="mt-8 max-w-xl text-lg text-foreground">
+            <p className="mt-8 max-w-xl text-2xl text-foreground">
               From idea to production-ready React and Django systems, focused on
               usability, scalability, and getting real users live quickly.
             </p>
@@ -52,110 +82,50 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="relative mt-12 lg:mt-0 flex flex-row flex-wrap lg:flex-col items-center justify-center gap-4 lg:items-end">
-            <div className="group flex w-full max-w-70 items-center gap-4 rounded-xl border border-neutral-200 bg-white/50 p-4 shadow-sm transition-all hover:border-accent/30 hover:shadow-md">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="h-5 w-5 drop-shadow-[0_0_8px_rgba(var(--accent-rgb),0.5)]"
-                >
-                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                </svg>
-              </div>
-              <div>
-                <p className="text-sm font-bold text-foreground">
-                  Fast SaaS MVP 
-                </p>
-                <p className="text-xs text-muted-foreground">
-                  Turn ideas into systems
-                </p>
-              </div>
-            </div>
+          <div className="relative mt-12 grid w-full max-w-136 grid-cols-1 gap-4 sm:grid-cols-2 lg:flex lg:flex-col lg:items-end">
+            {features.map((feature, index) => {
+              const Icon = feature.icon;
 
-            <div className="group flex w-full max-w-70 translate-x-0 items-center gap-4 rounded-xl border border-neutral-200 bg-white/50 p-4 shadow-sm transition-all hover:border-accent/30 hover:shadow-md lg:-translate-x-8">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+              return (
+                <div
+                        key={feature.title}
+                        className={`
+                group relative overflow-hidden rounded-3xl border border-border/75
+                bg-card/75 p-4 shadow-[0_10px_30px_rgba(0,0,0,0.06)]
+                backdrop-blur-xl transition-all duration-300
+                hover:-translate-y-1 hover:border-accent/50
+                hover:shadow-[0_18px_40px_rgba(0,0,0,0.1)]
+                lg:w-full lg:max-w-72
+                ${index === 1 ? "lg:-translate-x-6" : ""}
+                ${index === 3 ? "lg:-translate-x-10" : ""}
+              `}
                 >
-                  <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
-                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                </svg>
-              </div>
-              <div>
-                <p className="text-sm font-bold text-foreground">
-                  Auth & roles
-                </p>
-                <p className="text-xs text-muted-foreground">
-                  Secure user access
-                </p>
-              </div>
-            </div>
 
-            <div className="group flex w-full max-w-70 items-center gap-4 rounded-xl border border-neutral-200 bg-white/50 p-4 shadow-sm transition-all hover:border-accent/30 hover:shadow-md">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <rect width="20" height="14" x="2" y="5" rx="2" />
-                  <line x1="2" x2="22" y1="10" y2="10" />
-                </svg>
-              </div>
-              <div>
-                <p className="text-sm font-bold text-foreground">
-                  Payment & billing
-                </p>
-                <p className="text-xs text-muted-foreground">
-                  Stripe / Lemonsqueezy
-                </p>
-              </div>
-            </div>
+                  <div className="relative flex items-start gap-4">
+                    <div
+                      className="
+              flex h-12 w-12 shrink-0 items-center justify-center
+              rounded-2xl border border-accent/10
+              bg-linear-to-br from-accent/12 to-accent/4
+              text-accent shadow-sm
+            "
+                    >
+                      <Icon className="text-lg transition-transform duration-300 group-hover:scale-110" />
+                    </div>
 
-            <div className="group flex w-full max-w-70 translate-x-0 items-center gap-4 rounded-xl border border-neutral-200 bg-white/50 p-4 shadow-sm transition-all hover:border-accent/30 hover:shadow-md lg:-translate-x-12">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
-                </svg>
-              </div>
-              <div>
-                <p className="text-sm font-bold text-foreground">
-                  API integration
-                </p>
-                <p className="text-xs text-muted-foreground">
-                  REST & Third-party sync
-                </p>
-              </div>
-            </div>
+                    <div className="min-w-0">
+                      <p className="text-sm font-semibold tracking-tight text-foreground">
+                        {feature.title}
+                      </p>
 
-            {/* Decorative Background Glow */}
-            <div className="absolute -z-10 h-64 w-64 bg-accent/5 blur-[100px] rounded-full" />
+                      <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
