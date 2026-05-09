@@ -43,7 +43,7 @@ export default function Contact() {
             Let's build something worth shipping
           </h2>
 
-          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+          <p className="text-base md:text-lg text-foreground leading-relaxed">
             Have a product idea or an existing app that needs work? Send a quick
             message with what you're working on and I'll get back with a clear
             next step.

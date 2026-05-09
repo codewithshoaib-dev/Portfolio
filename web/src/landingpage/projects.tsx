@@ -78,7 +78,7 @@ const Projects = () => {
                   {proj.title}
                 </h3>
 
-                <p className="mt-2 text-sm text-neutral-600 leading-relaxed">
+                <p className="mt-2 text-sm text-foreground leading-relaxed">
                   {proj.description}
                 </p>
 

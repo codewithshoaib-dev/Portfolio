@@ -146,7 +146,7 @@ const backendWork = [
                         {item.title}
                       </h4>
                     </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <p className="text-sm text-foreground leading-relaxed">
                       {item.desc}
                     </p>
                   </div>

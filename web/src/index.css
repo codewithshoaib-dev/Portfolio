@@ -79,7 +79,7 @@
   }
 
     .section-subheading {
-    @apply mt-4 text-neutral-800 text-4xl font-semibold tracking-tight max-w-2xl;
+    @apply mt-4 text-neutral-800 text-3xl font-semibold tracking-tight max-w-2xl;
   }
 
     /* ─── Buttons ───────────────── */
