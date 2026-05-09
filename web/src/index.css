@@ -21,9 +21,9 @@
   --muted: #8c8581; 
   --muted-foreground: #525252; 
 
-  /* Accent: Indigo */
-  --accent: #6366f1;
-  --accent-foreground: ##e0e7ff;
+  /* Accent */
+--accent: #7c3aed;
+--accent-foreground: #ede9fe;
 
 
   /* Radius */
