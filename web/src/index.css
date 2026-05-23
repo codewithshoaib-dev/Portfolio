@@ -4,11 +4,12 @@
 
 :root {
   /* Core */
-  --background: #f7f5f2; 
-  --foreground: #0a0a0a;
+ --background: #f0ede8;
+--foreground: #0a0a0a;
 
-  /* Surfaces */
-  --card: #fffdf9;
+/* Surfaces */
+--card: #ffffff;       
+
   --border: #d1cdc7; 
   --card-border: #e8e1d8;
 
@@ -22,7 +23,7 @@
   --muted-foreground: #525252; 
 
   /* Accent */
---accent: #7c3aed;
+--accent: #10b981;
 --accent-foreground: #ede9fe;
 
 
