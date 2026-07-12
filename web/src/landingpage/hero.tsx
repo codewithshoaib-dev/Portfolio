@@ -32,27 +32,28 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden border-b bg-background selection:bg-neutral-900 selection:text-white border-border px-6 pt-16 lg:pt-6 pb-20 md:pb-24"
+      className="hero relative overflow-hidden bg-zinc-950 px-6 pt-16 pb-28 text-white selection:bg-white selection:text-zinc-900 lg:pt-6"
     >
       <div className="container-max relative z-10">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="max-w-2xl">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/10 px-3 py-1">
-              <span className="relative flex h-2 w-2">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-accent/5 px-3 py-1 backdrop-blur">
+              <span className="relative flex h-3 w-3">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75"></span>
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-accent"></span>
+                <span className="relative inline-flex h-3 w-3 rounded-full bg-accent"></span>
               </span>
+
               <span className="text-sm font-bold uppercase tracking-wider text-accent">
                 Available for new projects
               </span>
             </div>
 
-            <h1 className="max-w-[28ch] text-[2.75rem] font-semibold leading-[1.1] tracking-tight text-foreground sm:text-[2.75rem] lg:text-[3rem]">
-              Hi, I’m Shoaib, I help founders ship SaaS products
-              <span className="text-accent font-bold"> fast</span>
+            <h1 className="max-w-[28ch] text-[2.75rem] font-semibold leading-[1.1] tracking-tight sm:text-[2.75rem] lg:text-[3rem]">
+              Hi, I’m Shoaib, I build production-ready SaaS products
+              <span className="font-bold text-accent"> fast</span>
             </h1>
 
-            <p className="mt-8 max-w-xl text-2xl text-foreground">
+            <p className="mt-8 max-w-xl text-2xl text-zinc-300">
               From idea to production-ready React and Django systems, focused on
               usability, scalability, and getting real users live quickly.
             </p>
@@ -64,7 +65,9 @@ export default function Hero() {
                     .getElementById("contact")
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
-                className="btn-primary"
+                className="px-8 py-4 bg-accent text-zinc-950 rounded-md font-medium
+           transition-transform duration-200  will-change-transform
+           hover:scale-105 shadow-lg"
               >
                 Start a project →
               </button>
@@ -75,7 +78,7 @@ export default function Hero() {
                     .getElementById("projects")
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
-                className="btn-secondary"
+                className=" px-8 py-4 border shadow-sm border-zinc-700 rounded-md font-medium bg-zinc-900 transition-[border,transform] will-change-transform  hover:border-zinc-800 hover:scale-105"
               >
                 View work
               </button>
@@ -88,37 +91,43 @@ export default function Hero() {
 
               return (
                 <div
-                        key={feature.title}
-                        className={`
-                group relative overflow-hidden rounded-3xl border border-border/75
-                bg-card/75 p-4 shadow-[0_10px_30px_rgba(0,0,0,0.06)]
-                backdrop-blur-xl transition-all duration-300
-                hover:-translate-y-1 hover:border-accent/50
-                hover:shadow-[0_18px_40px_rgba(0,0,0,0.1)]
-                lg:w-full lg:max-w-72
-                ${index === 1 ? "lg:-translate-x-6" : ""}
-                ${index === 3 ? "lg:-translate-x-10" : ""}
-              `}
+                  key={feature.title}
+                  className={`
+                    group relative overflow-hidden rounded-3xl
+                    border border-white/10
+                    bg-white/5
+                    p-4
+                    backdrop-blur-xl
+                    transition-all duration-300
+                    hover:-translate-y-1
+                    hover:border-accent/40
+                    hover:bg-white/8
+                    lg:w-full lg:max-w-72
+                    ${index === 1 ? "lg:-translate-x-6" : ""}
+                    ${index === 3 ? "lg:-translate-x-10" : ""}
+                  `}
                 >
+                  <div className="absolute inset-0 bg-linear-to-br from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
                   <div className="relative flex items-start gap-4">
                     <div
                       className="
-              flex h-12 w-12 shrink-0 items-center justify-center
-              rounded-2xl border border-accent/10
-              bg-linear-to-br from-accent/12 to-accent/4
-              text-accent shadow-sm
-            "
+                        flex h-12 w-12 shrink-0 items-center justify-center
+                        rounded-2xl
+                        border border-accent/20
+                        bg-accent/10
+                        text-accent
+                      "
                     >
                       <Icon className="text-lg transition-transform duration-300 group-hover:scale-110" />
                     </div>
 
                     <div className="min-w-0">
-                      <p className="text-sm font-semibold tracking-tight text-foreground">
+                      <p className="text-sm font-semibold tracking-tight text-white">
                         {feature.title}
                       </p>
 
-                      <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                      <p className="mt-1 text-sm leading-relaxed text-zinc-400">
                         {feature.description}
                       </p>
                     </div>

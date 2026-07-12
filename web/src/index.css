@@ -123,6 +123,22 @@
   transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.hero::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: -1px;
+  height: 70px;
+  background: var(--color-background);
+
+  clip-path: polygon(
+    0 30%,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+}
+
 @layer base {
   button:not(:disabled),
   a[href] {
