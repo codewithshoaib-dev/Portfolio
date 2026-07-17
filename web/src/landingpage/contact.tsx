@@ -1,14 +1,21 @@
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { Mail, ArrowUpRight } from "lucide-react";
 
 import contactLinks from "../utils/contacts";
 
-import { ArrowUpRight } from "lucide-react";
-
 export default function Contact() {
-
-
-  
+  const handleEmailRedirect = () => {
+    window.location.href = `mailto:${contactLinks.Email}?subject=Project Inquiry&body=Hi Shoaib,%0A%0AI'd like to discuss a project with you.`;
+  };
   const contactMethods = [
+    {
+      icon: Mail,
+      label: "Email",
+      value: contactLinks.Email,
+      meta: "Usually replies within 24 hours",
+      onClick: handleEmailRedirect,
+      primary: true,
+    },
     {
       icon: FaLinkedin,
       label: "LinkedIn",
@@ -23,26 +30,20 @@ export default function Contact() {
     },
   ];
 
-   const handleEmailRedirect = () => {
-     window.location.href = `mailto:${contactLinks.Email}?subject=Project Inquiry&body=Hi Shoaib,%0A%0AI'd like to discuss a project with you.`;
-   };
-
   return (
     <section
       id="contact"
-      className="border-b bg-background border-neutral-200 selection:text-white selection:bg-neutral-800 px-6 pt-16 md:pt-24"
+      className="bg-background selection:text-white selection:bg-neutral-800 pt-24 px-6"
     >
-      <div className="container-max">
+      <div className="max-w-7xl mx-auto">
         {/* ─── Header ───────────────── */}
         <div className="max-w-2xl mb-14">
           <p className="text-sm uppercase tracking-wider text-muted-foreground mb-4">
             Contact
           </p>
-
           <h2 className="section-subheading mb-5">
             Let's build something worth shipping
           </h2>
-
           <p className="text-base md:text-lg text-foreground leading-relaxed">
             Have a product idea or an existing app that needs work? Send a quick
             message with what you're working on and I'll get back with a clear
@@ -50,65 +51,81 @@ export default function Contact() {
           </p>
         </div>
 
-        {/* ─── Primary CTA  ───────────────── */}
-        <div className="border border-neutral-200 rounded-lg p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-14">
-          <div>
-            <p className="text-sm uppercase tracking-wider text-neutral-500 mb-2">
-              Email
-            </p>
-
-            <p className="text-neutral-900 font-medium">{contactLinks.Email}</p>
-
-            <p className="text-sm text-neutral-600 mt-1">
-              Usually replies within 24 hours
-            </p>
-          </div>
-
-          <button onClick={handleEmailRedirect} className="btn-primary">
-            Send an email
-          </button>
-        </div>
-
-        {/* ─── Secondary Contact Methods ───────────────── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl">
+        {/* ─── Contact methods ───────────────── */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
           {contactMethods.map((method) => {
             const Icon = method.icon;
+            const isPrimary = method.primary;
 
-            return (
+            const cardClasses = isPrimary
+              ? "bg-zinc-900 border-zinc-900 text-white"
+              : "bg-transparent border-zinc-300 text-foreground hover:border-zinc-900";
+
+            const content = (
+              <div
+                className={`group h-full flex flex-col justify-between border rounded-lg p-6 transition-colors duration-200 ease-out ${cardClasses}`}
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <Icon
+                      size={20}
+                      className={
+                        isPrimary
+                          ? "text-white"
+                          : "text-muted-foreground group-hover:text-foreground transition-colors duration-200"
+                      }
+                    />
+                    <ArrowUpRight
+                      size={18}
+                      className={
+                        isPrimary
+                          ? "text-white/60"
+                          : "text-muted group-hover:text-foreground transition-colors duration-200"
+                      }
+                    />
+                  </div>
+
+                  <p className="text-sm uppercase tracking-wider mb-2 opacity-70">
+                    {method.label}
+                  </p>
+                  <p
+                    className={`font-medium ${isPrimary ? "" : "text-foreground"}`}
+                  >
+                    {method.value}
+                  </p>
+                </div>
+
+                {method.meta && (
+                  <p className="text-sm mt-4 opacity-60">{method.meta}</p>
+                )}
+              </div>
+            );
+
+            return method.onClick ? (
+              <button
+                key={method.label}
+                onClick={method.onClick}
+                className="text-left"
+              >
+                {content}
+              </button>
+            ) : (
               <a
                 key={method.label}
                 href={method.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between py-5 border-b border-neutral-200
-             transition-colors duration-200 ease-out
-            hover:border-neutral-900 group"
               >
-                <div className="flex items-center gap-4">
-                  <Icon className="text-neutral-500 transition-colors duration-200 ease-out group-hover:text-neutral-900" />
-
-                  <div>
-                    <p className="text-sm font-medium text-neutral-900">
-                      {method.label}
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      {method.value}
-                    </p>
-                  </div>
-                </div>
-
-                <span className="text-neutral-400 transition-transform duration-200 ease-out group-hover:text-neutral-800">
-                  <ArrowUpRight size={20} />
-                </span>
+                {content}
               </a>
             );
           })}
         </div>
 
         {/* ─── Footer ───────────────── */}
-        <div className="mt-16 pt-8 border-t pb-4 border-neutral-200 text-center text-sm text-neutral-600 space-y-1">
+        <div className="pt-8 pb-4 border-t border-neutral-200 flex flex-col md:flex-row md:items-center md:justify-between gap-1 text-sm text-muted-foreground">
+          <p>© {new Date().getFullYear()} Shoaib Codes — All rights reserved</p>
           <p>Built with React & Tailwind</p>
-          <p>© 2026 Shoaib Codes — All rights reserved</p>
         </div>
       </div>
     </section>
