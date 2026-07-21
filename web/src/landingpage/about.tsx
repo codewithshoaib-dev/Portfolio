@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   SiReact,
   SiTypescript,
@@ -18,8 +19,14 @@ import {
 } from "react-icons/rx";
 
 import { PiCreditCard } from "react-icons/pi";
+import { ChevronDown } from "lucide-react";
 
 export default function About() {
+  const [expanded, setExpanded] = useState<string | null>(null);
+
+  const toggle = (title: string) =>
+    setExpanded((prev) => (prev === title ? null : title));
+
   const tools = [
     { icon: SiReact, label: "React" },
     { icon: SiTypescript, label: "TypeScript" },
@@ -29,131 +36,226 @@ export default function About() {
     { icon: SiVercel, label: "Vercel" },
   ];
 
-const productWork = [
-  {
-    title: "SaaS Dashboards",
-    icon: <RxDashboard />,
-    desc: "Production dashboards with real-time state, filters, and scalable UI structure.",
-  },
-  {
-    title: "Auth & User Roles",
-    icon: <RxLockClosed />,
-    desc: "Secure authentication with role-based access and multi-tenant support.",
-  },
-  {
-    title: "Onboarding Flows",
-    icon: <RxRocket />,
-    desc: "User flows designed to get users to value fast with minimal friction.",
-  },
-  {
-    title: "Landing Pages",
-    icon: <RxLayout />,
-    desc: "Fast, conversion-focused SaaS landing pages with solid performance and SEO structure.",
-  },
-];
+  const productWork = [
+    {
+      title: "SaaS Dashboards",
+      description:
+        "Responsive dashboards with analytics, charts, tables, filters, and role-aware experiences.",
+      icon: <RxDashboard />,
+    },
+    {
+      title: "Auth & User Roles",
+      description:
+        "Secure authentication, protected routes, permissions, and multi-role access control.",
+      icon: <RxLockClosed />,
+    },
+    {
+      title: "Onboarding Flows",
+      description:
+        "Guided onboarding, progress tracking, and user journeys that improve activation.",
+      icon: <RxRocket />,
+    },
+    {
+      title: "Landing Pages",
+      description:
+        "Fast, SEO-friendly pages designed to convert visitors into customers.",
+      icon: <RxLayout />,
+    },
+  ];
 
-const backendWork = [
-  {
-    title: "REST APIs",
-    icon: <RxLayers />,
-    desc: "Clean Django APIs with proper structure, pagination, and filtering.",
-  },
-  {
-    title: "Payments",
-    icon: <PiCreditCard />,
-    desc: "Stripe and billing systems for SaaS subscriptions and one-time payments.",
-  },
-  {
-    title: "Integrations",
-    icon: <RxMixerHorizontal />,
-    desc: "OAuth, email, storage, and third-party APIs wired into production systems.",
-  },
-  {
-    title: "Internal Tools",
-    icon: <RxComponentInstance />,
-    desc: "Custom admin tools for managing users, data, and operations beyond Django admin.",
-  },
-];
+  const backendWork = [
+    {
+      title: "REST APIs",
+      description:
+        "Clean, scalable Django REST APIs with filtering, pagination, authentication, and documentation.",
+      icon: <RxLayers />,
+    },
+    {
+      title: "Payments",
+      description:
+        "Stripe integration for subscriptions, checkout flows, billing, and webhooks.",
+      icon: <PiCreditCard />,
+    },
+    {
+      title: "Integrations",
+      description:
+        "Third-party APIs including email services, cloud storage, and external platforms.",
+      icon: <RxMixerHorizontal />,
+    },
+    {
+      title: "Internal Tools",
+      description:
+        "Admin dashboards and business tools that automate repetitive workflows.",
+      icon: <RxComponentInstance />,
+    },
+  ];
 
   return (
     <section
       id="about"
-      className="py-16 md:py-24 px-6 border-b border-border bg-background selection:bg-neutral-900 selection:text-white"
+      className="border-b border-border bg-background px-6 py-20 md:py-28"
     >
-      <div className="max-w-7xl mx-auto">
-        {/* ─── Intro ─── */}
-        <p className="text-sm uppercase tracking-wider text-muted-foreground mb-4">
-          Overview
-        </p>
-        <div className="grid lg:grid-cols-2 gap-12 items-start mb-24">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid gap-16 lg:grid-cols-[1.3fr_.7fr]">
           <div>
-            <h2 className="text-4xl font-medium tracking-tight text-neutral-900 mb-6">
-              I help founders ship SaaS products fast.
+            <p className="mb-4 text-sm uppercase tracking-[0.18em] text-muted-foreground">
+              Overview
+            </p>
+
+            <h2 className="max-w-2xl text-4xl font-medium tracking-tight text-foreground md:text-5xl">
+              I build complete SaaS products that are ready for real users.
             </h2>
 
-            <p className="text-xl text-foreground leading-relaxed max-w-lg">
-              I build production-ready SaaS systems with React and Django,
-              focused on shipping quickly, clean architecture, and features that
-              actually support real users in production.
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
+              From responsive React interfaces to scalable Django APIs, I focus
+              on shipping production-ready products quickly without sacrificing
+              maintainability.
             </p>
           </div>
 
-          {/* Tech stack pills */}
-          <div className="pt-2">
-            <div className="grid grid-cols-[repeat(auto-fit,minmax(140px,1fr))] gap-3">
+          <div>
+            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+              Built with
+            </p>
+
+            <div className="flex flex-wrap gap-3">
               {tools.map(({ icon: Icon, label }) => (
                 <div
                   key={label}
-                  className="flex items-center justify-center gap-2 px-4 py-2 bg-neutral-50 border border-neutral-200 rounded-full text-neutral-600 transition-colors hover:border-neutral-400"
+                  className="flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm text-muted-foreground"
                 >
-                  <Icon className="text-sm" />
-                  <span className="text-xs font-medium uppercase tracking-wider">
-                    {label}
-                  </span>
+                  <Icon className="text-base" />
+                  {label}
                 </div>
               ))}
             </div>
           </div>
         </div>
-        {/* ─── Section bridge ─── */}
-        <p className="text-2xl text-foreground max-w-2xl mb-12 leading-relaxed">
-          Most work falls into two layers: what users interact with, and the
-          backend systems that make it work reliably in production.
-        </p>
 
-        {/* ─── Service cards ─── */}
-        <div className="grid md:grid-cols-2 gap-10">
-          {[
-            { label: "SaaS Product Layer", data: productWork },
-            { label: "Backend Systems", data: backendWork },
-          ].map((section) => (
-            <div key={section.label} className="flex flex-col">
-              <h3 className="text-xs font-bold uppercase tracking-[0.15em] text-muted-foreground mb-6">
-                {section.label}
-              </h3>
+        <div className="my-20 h-px bg-border" />
 
-              <div className="grid grid-cols-1 gap-4">
-                {section.data.map((item) => (
-                  <div
-                    key={item.title}
-                    className="group flex flex-col h-full rounded-2xl border border-border bg-card p-5 transition-[border,shadow] duration-300 hover:border-neutral-900 hover:shadow-lg"
-                  >
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-neutral-50 text-neutral-900 border border-neutral-100 transition-colors group-hover:bg-neutral-900 group-hover:text-white">
-                        {item.icon}
-                      </div>
-                      <h4 className="text-[15px] font-semibold text-foreground">
-                        {item.title}
-                      </h4>
-                    </div>
-                    <p className="text-sm text-foreground leading-relaxed">
-                      {item.desc}
-                    </p>
-                  </div>
-                ))}
+        <div className="grid gap-8 lg:grid-cols-2">
+          <div className="rounded-3xl border border-border bg-card p-8">
+            <div className="mb-8 flex items-center gap-3">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent/10 text-accent">
+                <RxDashboard className="text-xl" />
+              </div>
+
+              <div>
+                <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                  Frontend
+                </p>
+
+                <h3 className="text-2xl font-semibold">Product experience</h3>
               </div>
             </div>
-          ))}
+
+            <p className="mb-8 text-muted-foreground leading-relaxed">
+              Interfaces that help users reach value quickly while remaining
+              fast, scalable, and easy to extend.
+            </p>
+
+            <div className="grid gap-4">
+              {productWork.map((item) => {
+                const open = expanded === item.title;
+
+                return (
+                  <button
+                    key={item.title}
+                    onClick={() => toggle(item.title)}
+                    className="group overflow-hidden rounded-xl border border-border p-4 text-left transition-[border] hover:border-accent/40"
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="text-xl text-accent">{item.icon}</div>
+
+                      <div className="flex-1">
+                        <h4 className="font-medium">{item.title}</h4>
+                      </div>
+
+                      <ChevronDown
+                        className={`h-4 w-4 text-muted-foreground transition-transform duration-300 ${
+                          open ? "rotate-180" : ""
+                        }`}
+                      />
+                    </div>
+
+                    <div
+                      className={`grid transition-all duration-300 ${
+                        open ? "grid-rows-[1fr] pt-4" : "grid-rows-[0fr]"
+                      }`}
+                    >
+                      <div className="overflow-hidden">
+                        <p className="text-sm leading-relaxed text-muted-foreground">
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-border bg-card p-8">
+            <div className="mb-8 flex items-center gap-3">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent/10 text-accent">
+                <RxLayers className="text-xl" />
+              </div>
+
+              <div>
+                <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                  Backend
+                </p>
+
+                <h3 className="text-2xl font-semibold">Production systems</h3>
+              </div>
+            </div>
+
+            <p className="mb-8 text-muted-foreground leading-relaxed">
+              APIs and infrastructure built for authentication, payments,
+              integrations, and long-term reliability.
+            </p>
+
+            <div className="grid gap-4">
+              {backendWork.map((item) => {
+                const open = expanded === item.title;
+
+                return (
+                  <button
+                    key={item.title}
+                    onClick={() => toggle(item.title)}
+                    className="group overflow-hidden rounded-xl border border-border p-4 text-left transition-all hover:border-accent/40"
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="text-xl text-accent">{item.icon}</div>
+
+                      <div className="flex-1">
+                        <h4 className="font-medium">{item.title}</h4>
+                      </div>
+
+                      <ChevronDown
+                        className={`h-4 w-4 text-muted-foreground transition-transform duration-300 ${
+                          open ? "rotate-180" : ""
+                        }`}
+                      />
+                    </div>
+
+                    <div
+                      className={`grid transition-all duration-300 ${
+                        open ? "grid-rows-[1fr] pt-4" : "grid-rows-[0fr]"
+                      }`}
+                    >
+                      <div className="overflow-hidden">
+                        <p className="text-sm leading-relaxed text-muted-foreground">
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
     </section>
