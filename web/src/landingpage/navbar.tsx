@@ -17,7 +17,7 @@ export default function Navbar() {
     { label: "Contact", id: "contact" },
   ];
 
-  // Replace with real URLs
+ 
   const socials = [
     {
       label: "GitHub",
