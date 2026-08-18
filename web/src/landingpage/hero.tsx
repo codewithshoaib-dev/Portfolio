@@ -48,12 +48,16 @@ export default function Hero() {
               </span>
             </div>
 
-            <h1 className="max-w-[28ch] text-[2.75rem] font-semibold leading-[1.1] tracking-tight sm:text-[2.75rem] lg:text-[3rem]">
-              Hi, I’m Shoaib, I build production-ready SaaS products
-              <span className="font-bold text-accent"> fast</span>
+            <h1
+              dir="auto"
+              className="max-w-[28ch] text-[clamp(2rem,7vw,3rem)] font-semibold leading-[1.1] tracking-tight"
+            >
+              Hi, I'm Shoaib. I build{" "}
+              <span className="font-bold text-accent">fast,</span>{" "}
+              <span className="hero-emphasis">scalable</span> web applications
             </h1>
 
-            <p className="mt-8 max-w-xl text-2xl text-zinc-300">
+            <p className="mt-8 max-w-xl text-[clamp(1.125rem,4vw,1.5rem)] text-zinc-300">
               From idea to production-ready React and Django systems, focused on
               usability, scalability, and getting real users live quickly.
             </p>
