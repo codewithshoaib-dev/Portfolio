@@ -4,14 +4,14 @@
 
 :root {
   /* Core */
- --background: #f0ede8;
---foreground: #0a0a0a;
+  --background: #f0ede8;
+  --foreground: #1c1a17;
 
-/* Surfaces */
---card: #ffffff;       
+  /* Surfaces */
+  --card: #faf8f5;
 
-  --border: #d1cdc7; 
-  --card-border: #e8e1d8;
+  --border: #ddd8d0;
+  --card-border: #ece6dc;
 
   /* Primary UI */
   --primary: #0f0f0f;
@@ -20,7 +20,7 @@
   /* Secondary */
   --secondary: #ece8e1;
   --muted: #8c8581; 
-  --muted-foreground: #525252; 
+--muted-foreground: #404040;
 
   /* Accent */
 --accent: #10b981;
