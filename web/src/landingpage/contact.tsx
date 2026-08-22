@@ -89,7 +89,7 @@ export default function Contact() {
                     {method.label}
                   </p>
                   <p
-                    className={`font-medium ${isPrimary ? "" : "text-foreground"}`}
+                    className={`font-medium break-all ${isPrimary ? "" : "text-foreground"}`}
                   >
                     {method.value}
                   </p>
