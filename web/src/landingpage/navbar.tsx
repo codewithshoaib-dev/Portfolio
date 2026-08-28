@@ -7,9 +7,17 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
 
-  useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "auto";
-  }, [isOpen]);
+useEffect(() => {
+  if (!isOpen) return;
+
+  const originalOverflow = document.body.style.overflow;
+
+  document.body.style.overflow = "hidden";
+
+  return () => {
+    document.body.style.overflow = originalOverflow;
+  };
+}, [isOpen]);
 
   const navLinks = [
     { label: "Overview", id: "about" },
@@ -39,7 +47,7 @@ export default function Navbar() {
 
   return (
     <nav className=" w-full bg-zinc-950 z-100">
-      <div className="max-w-7xl mx-auto flex items-center justify-between h-16 px-6 relative">
+      <div className="max-w-7xl mx-auto flex items-center justify-between h-16 sm:px-6 relative">
         {/* Brand */}
         <div
           className="flex items-center gap-2 cursor-pointer group"
@@ -141,14 +149,14 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         <div
-          className={`fixed inset-0 w-full h-screen bg-card z-110 md:hidden transition-transform duration-300 ease-premium ${
+          className={`fixed inset-0 w-full scrollbar-hidden overflow-y-auto min-h-screen bg-card z-110 md:hidden transition-transform duration-300 ease-premium ${
             isOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
           }`}
         >
-          <div className="flex flex-col justify-center h-full px-8 sm:px-12 gap-10">
+          <div className="flex flex-col justify-center px-8 sm:px-12 gap-10">
             {/* Header */}
-            <div className="space-y-1">
-              <span className="text-[10px] uppercase tracking-[0.4em] text-muted font-bold">
+            <div className="py-4">
+              <span className="text-[10px] uppercase tracking-[0.2em] text-muted font-bold">
                 Menu
               </span>
               <div className="h-px w-8 bg-gray-200" />
@@ -163,7 +171,7 @@ export default function Navbar() {
                   style={{
                     transitionDelay: isOpen ? `${index * 50 + 100}ms` : "0ms",
                   }}
-                  className={`group flex items-center gap-4 text-5xl font-light tracking-tighter text-foreground transition-all duration-500 ${
+                  className={`group flex items-center gap-4 text-4xl font-light tracking-tighter text-foreground transition-all duration-500 ${
                     isOpen
                       ? "translate-y-0 opacity-100"
                       : "translate-y-8 opacity-0"
