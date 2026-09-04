@@ -147,8 +147,8 @@ export default function About() {
           </div>
 
           <div className="grid gap-x-12 gap-y-2 md:grid-cols-2">
-              <WorkColumn items={frontendWork} dividerSide="right" />
-              <WorkColumn items={backendWork} dividerSide="left" />
+            <WorkColumn items={frontendWork} dividerSide="right" />
+            <WorkColumn items={backendWork} dividerSide="left" />
           </div>
         </div>
       </div>
