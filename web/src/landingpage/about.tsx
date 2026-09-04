@@ -95,6 +95,8 @@ export default function About() {
     >
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-16 lg:grid-cols-[1.3fr_.7fr]">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid gap-16 lg:grid-cols-[1.3fr_.7fr]">
           <div>
             <p className="mb-4 text-sm uppercase tracking-[0.18em] text-muted-foreground">
               Overview
@@ -104,6 +106,10 @@ export default function About() {
               I build complete SaaS products that are ready for real users.
             </h2>
 
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
+              From responsive React interfaces to scalable Django APIs, I focus
+              on shipping production-ready products quickly without sacrificing
+              maintainability.
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
               From responsive React interfaces to scalable Django APIs, I focus
               on shipping production-ready products quickly without sacrificing
