@@ -19,12 +19,12 @@
 
   /* Secondary */
   --secondary: #ece8e1;
-  --muted: #8c8581; 
---muted-foreground: #404040;
+  --muted: #8c8581;
+  --muted-foreground: #404040;
 
   /* Accent */
---accent: #10b981;
---accent-foreground: #ede9fe;
+  --accent: #10b981;
+  --accent-foreground: #ede9fe;
 
 
   /* Radius */
@@ -79,15 +79,13 @@
     @apply max-w-7xl mx-auto;
   }
 
-    .section-subheading {
+  .section-subheading {
     @apply mt-4 text-neutral-800 text-3xl font-semibold tracking-tight max-w-2xl;
   }
 
-    /* ─── Buttons ───────────────── */
+  /* ─── Buttons ───────────────── */
   .btn-primary {
-    @apply px-8 py-4 bg-black text-white rounded-md font-medium
-           transition-transform duration-200  will-change-transform
-           hover:scale-105 shadow;
+    @apply px-8 py-4 bg-black text-white rounded-md font-medium transition-transform duration-200 will-change-transform hover:scale-105 shadow;
   }
 
   .btn-secondary {
@@ -95,77 +93,68 @@
   }
 
   /*  ___Toast.tsx__________ */
-   .toast {
-  @apply fixed top-19 left-1/2 
-         px-4 py-2 rounded-full
-         text-sm font-medium
-         bg-foreground text-background
-         shadow-md
-         pointer-events-none
-         z-51;
+  .toast {
+    @apply fixed top-[4.75rem] left-1/2 px-4 py-2 rounded-full text-sm font-medium bg-foreground text-background shadow-md pointer-events-none z-[51];
 
-  transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
 
 
-  transform: translate(-50%, calc(-100% - 6rem)); 
-}
-
-.toast--visible {
-  @apply pointer-events-auto;
-
-  /* Return to the natural position defined by top-20 */
-  transform: translate(-50%, 0);
-}
-
-}
-
-.ease-premium {
-  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset-inline: 0;
-  bottom: -1px;
-  height: 70px;
-  background: var(--color-background);
-
-  clip-path: polygon(
-    0 30%,
-    100% 0,
-    100% 100%,
-    0 100%
-  );
-}
-
-.hero-emphasis {
-  position: relative;
-  display: inline-block;
-}
-
-.hero-emphasis::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -0.08em;
-  width: 100%;
-  height: 0.12em;
-  background: linear-gradient(90deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 60%, transparent) 100%);
-  border-radius: 9999px;
-
-  transform: scaleX(0);
-  transform-origin: left;
-  animation: heroUnderline 1000ms cubic-bezier(0.22, 1, 0.36, 1) 300ms forwards;
-}
-
-@keyframes heroUnderline {
-  60% {
-    transform: scaleX(1.05);
+    transform: translate(-50%, calc(-100% - 6rem));
   }
 
-  100% {
-    transform: scaleX(1)
+  .toast--visible {
+    @apply pointer-events-auto;
+
+    /* Return to the natural position defined by top-[4.75rem] */
+    transform: translate(-50%, 0);
+  }
+
+  .ease-premium {
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    bottom: -1px;
+    height: 70px;
+    background: var(--color-background);
+
+    clip-path: polygon(0 30%,
+        100% 0,
+        100% 100%,
+        0 100%);
+  }
+
+  .hero-emphasis {
+    position: relative;
+    display: inline-block;
+  }
+
+  .hero-emphasis::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.08em;
+    width: 100%;
+    height: 0.12em;
+    background: linear-gradient(90deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 60%, transparent) 100%);
+    border-radius: 9999px;
+
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: heroUnderline 1000ms cubic-bezier(0.22, 1, 0.36, 1) 300ms forwards;
+  }
+
+  @keyframes heroUnderline {
+    60% {
+      transform: scaleX(1.05);
+    }
+
+    100% {
+      transform: scaleX(1)
+    }
   }
 }
 
