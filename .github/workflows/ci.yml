@@ -14,12 +14,12 @@ jobs:
     runs-on: ubuntu-latest
 
     defaults:
-        run:
-            working-directory: web
+      run:
+        working-directory: web
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -27,7 +27,7 @@ jobs:
           version: 10.18.0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 24
           cache: pnpm
