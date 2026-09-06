@@ -5,7 +5,7 @@ import deployly_hero from "../assets/images-optimized/deployly_hero.webp";
 import subscripto_form from "../assets/images-optimized/Subscripto_form.webp";
 import console_dash from "../assets/images-optimized/console_dash.webp";
 
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const projects = [
   {
@@ -83,15 +83,11 @@ const Projects = () => {
                 </p>
 
                 <a
-                  target="_blank"
-                  rel="noopener noreferrer"
                   href={proj.link}
-                  className=" mt-3 inline-flex items-center gap-1 text-sm font-medium text-neutral-900 group"
+                  className="mt-3 inline-flex items-center gap-1 rounded-md bg-primary px-4 py-3 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:opacity-90"
                 >
-                  View project{" "}
-                  <span className="inline-block transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1">
-                    <ArrowUpRight size={20} />
-                  </span>
+                  View project
+                  <ArrowRight size={16} />
                 </a>
               </div>
             </div>
