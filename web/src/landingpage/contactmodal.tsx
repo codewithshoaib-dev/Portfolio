@@ -44,7 +44,7 @@ export default function ContactModal({ isOpen, onClose }: Props) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-background/60 "
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 backdrop-blur-[3px]"
       onClick={onClose} // click outside closes
     >
       {/* Modal */}
@@ -101,7 +101,7 @@ export default function ContactModal({ isOpen, onClose }: Props) {
           </button>
         </div>
       </div>
-      
+
       <Toast
         message="Email copied to clipboard!"
         show={isToast}
