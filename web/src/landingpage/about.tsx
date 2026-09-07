@@ -101,13 +101,12 @@ export default function About() {
             </p>
 
             <h2 className="section-subheading mb-5">
-              I build complete SaaS products that are ready for real users.
+              I design, build, and ship production SaaS.
             </h2>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              From responsive React interfaces to scalable Django APIs, I focus
-              on shipping production-ready products quickly without sacrificing
-              maintainability.
+              I work across the stack, building everything from React interfaces
+              to Django backends and taking products from idea to launch.
             </p>
           </div>
 
