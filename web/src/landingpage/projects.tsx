@@ -46,9 +46,11 @@ const Projects = () => {
           Selected Work
         </h2>
 
-        <p className="section-subheading mb-16">
-          A few things I've built. From SaaS interfaces to full-stack apps with
-          auth, payments, and real backend logic.
+        <h2 className="section-subheading mb-5">A few things I've built.</h2>
+
+        <p className="mb-16 max-w-xl text-lg leading-relaxed text-muted-foreground">
+          From SaaS interfaces to full-stack applications with authentication,
+          payments, and complex backend systems.
         </p>
 
         {/* Grid */}

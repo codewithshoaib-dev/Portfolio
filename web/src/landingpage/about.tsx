@@ -4,7 +4,7 @@ import {
   SiTailwindcss,
   SiDjango,
   SiPostgresql,
-  SiVercel,
+  SiNextdotjs,
 } from "react-icons/si";
 
 import {
@@ -26,11 +26,11 @@ interface WorkItem {
 
 const tools = [
   { icon: SiReact, label: "React" },
+  { icon: SiNextdotjs, label: "Nextjs" },
   { icon: SiTypescript, label: "TypeScript" },
   { icon: SiTailwindcss, label: "Tailwind" },
   { icon: SiDjango, label: "Django" },
   { icon: SiPostgresql, label: "Postgres" },
-  { icon: SiVercel, label: "Vercel" },
 ];
 
 const frontendWork: WorkItem[] = [
@@ -101,13 +101,12 @@ export default function About() {
             </p>
 
             <h2 className="section-subheading mb-5">
-              I build complete SaaS products that are ready for real users.
+              I design, build, and ship production SaaS.
             </h2>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              From responsive React interfaces to scalable Django APIs, I focus
-              on shipping production-ready products quickly without sacrificing
-              maintainability.
+              I work across the stack, building everything from React interfaces
+              to Django backends and taking products from idea to launch.
             </p>
           </div>
 
@@ -116,14 +115,14 @@ export default function About() {
               Built with
             </p>
 
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-xs text-muted-foreground">
-              {tools.map(({ icon: Icon, label }, index) => (
-                <span key={label} className="flex items-center gap-1.5">
-                  <Icon className="text-sm" />
+            <div className="flex flex-wrap gap-2">
+              {tools.map(({ icon: Icon, label }) => (
+                <span
+                  key={label}
+                  className="inline-flex items-center gap-2 rounded-md border bg-muted/10 px-2.5 py-1.5 text-sm"
+                >
+                  <Icon className="size-4" aria-hidden="true" />
                   {label}
-                  {index !== tools.length - 1 && (
-                    <span className="ml-3 text-border">/</span>
-                  )}
                 </span>
               ))}
             </div>
